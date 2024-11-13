@@ -1,0 +1,15 @@
+
+{
+  "name": "proyecto_node",
+  "version": "1.0.0",
+  "description": "Proyecto convertido a estructura de Node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "User",
+  "license": "ISC"
+}

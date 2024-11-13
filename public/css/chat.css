@@ -1,0 +1,140 @@
+/* Reset y estilos generales */
+/* Fondo con patrón de íconos repetitivos */
+body {
+    background-image: url('../Assest/Imagen\ de\ WhatsApp\ 2024-11-12\ a\ las\ 19.01.34_59f4acd0.jpg'); /* Cambia la ruta según tu archivo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+
+    width: 100%;
+    height: 100%;
+}
+
+body, html {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Menú lateral */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    z-index: 1001;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #87CEEB;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+#menu-toggle:checked + .menu-icon + .sidebar {
+    transform: translateX(0);
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #FF69B4;
+}
+
+.logo-section p {
+    color: #FF69B4;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.menu-list li {
+    margin: 15px 0;
+}
+
+.menu-list li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.menu-list li a i {
+    margin-right: 10px;
+    color: #FF69B4;
+}
+
+.menu-list li a:hover,
+.menu-list li a.active {
+    background-color: #FF69B4;
+    color: #fff;
+}
+
+
+
+/* Contenedor para el mensaje de atención y QR */
+.qr-container {
+    background-color: #a874c8; /* Color de fondo morado */
+    border: 2px solid #9656a5; /* Borde de tono más oscuro */
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del mensaje de horario de atención */
+.attention-hours {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Estilo de la imagen del QR */
+.qr-code {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Estilo del texto de advertencia */
+.disclaimer {
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.4;
+    text-align: center;
+}

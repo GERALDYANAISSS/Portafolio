@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for modern icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/registro.css">
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="index.html" class="logo">
+                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red PsicoVínculo">
+                </a>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/recomendaciones">Recomendaciones</a></li>
+                        <li><a href="/nosotros">Nosotros</a></li>
+                        <li><a href="/contactanos">Contacto</a></li>
+                        <li><a href="/iniciarsesion">Inicia Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h4><p>Bienvenido a fonoaudiologia voces en crecimiento</p></h4>
+                <p>Inicia sesión para accedera tu plan personalizados</p>
+                <input type="button" value="Iniciar Sesión" id="sign-in" onclick="location.href='iniciarsesion.html';">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <p>Únete a nuestra red fonoaudiologia y crea tu cuenta hoy para tu bienestar emocional.</p>
+                <br>
+                <form class="form form-register" id="registerForm" novalidate>
+                    <div>
+                        <label><i class='bx bx-user'></i>
+                            <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+                        </label>
+                        <div id="errorNombre" class="error-message"></div>
+                    </div>
+                    <div>
+                        <label><i class='bx bx-user'></i>
+                            <input type="text" placeholder="Apellido" name="apellido" id="apellido" required>
+                        </label>
+                        <div id="errorApellido" class="error-message"></div>
+                    </div>
+                    <div>
+                        <label><i class='bx bx-id-card'></i>
+                            <input type="text" placeholder="RUT" name="rut" id="rut" required>
+                        </label>
+                        <div id="errorRut" class="error-message"></div>
+                    </div>
+                    <div>
+                        <label><i class='bx bx-envelope'></i>
+                            <input type="email" placeholder="Correo Electrónico" name="correo" id="correo" required>
+                        </label>
+                        <div id="errorCorreo" class="error-message"></div>
+                    </div>
+                    <input type="submit" value="Registrarse">
+                    <div class="alerta-error">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito">Te registraste correctamente</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024. Todos los derechos reservados.</p>
+            <div class="social-media">
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/registro.js"></script>
+</body>
+</html>

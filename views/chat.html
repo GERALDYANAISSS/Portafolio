@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de Atención</title>
+    <link rel="stylesheet" href="css/chat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú lateral con hamburguesa -->
+    <input type="checkbox" id="menu-toggle" style="display: none;">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <aside class="sidebar">
+        <div class="logo-section">
+            <img src="/assets/logo.png" alt="Foto de perfil">
+            <p class="profile-name">Mi Perfil</p>
+        </div>
+        <ul class="menu-list">
+            <ul class="menu-list">
+                <li><a href="/perfil_paciente.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
+                <li><a href="/Pages/agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+                <li><a href="/Pages/informativo.html"><i class="fas fa-user-friends"></i> Informativo</a></li>
+                <li><a href="/Pages/chat.html"><i class="fas fa-sign-out-alt"></i> Atencion chat</a></li>
+                <li><a href="/Pages/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+
+        </ul>
+    </aside>
+
+    <!-- Fondo de íconos repetitivos -->
+    <div class="background-pattern">
+        <!-- Contenedor principal para el mensaje y el QR -->
+        <div class="qr-container">
+            <p class="attention-hours">
+                <strong>Horario de atención</strong><br>
+                Lunes a viernes: 10:00 a 18:00<br>
+                Sábados: 10:30 a 14:30
+            </p>
+            <a href="https://w.app/Gs7FH3" target="_blank">
+                <img src="/assets/Qr.jpg" alt="Código QR para WhatsApp" class="qr-code">
+            </a>
+            <p class="disclaimer">
+                Recuerde usar este medio de comunicación con responsabilidad dentro del horario establecido.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

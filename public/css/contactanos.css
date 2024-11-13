@@ -1,0 +1,290 @@
+body {
+    background-color: #f0f2f5;
+    background-image: url('../Assest/Imagen\ de\ WhatsApp\ 2024-11-11\ a\ las\ 23.26.32_6f66880f.jpg'); /* Añade aquí la ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Hace que el fondo se mantenga fijo al hacer scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+/* Header */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    position: fixed; /* Mantiene el header fijo en la parte superior */
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: #555;
+}
+
+/* Contenedor principal */
+.contact-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    padding: 50px;
+}
+
+/* Encabezado */
+.contact-header h3 {
+    font-size: 18px;
+    text-align: center;
+    color: #f57c00; /* Un naranja cálido */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact-header h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contact-header p {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* Información de contacto */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.info-block {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.info-block i {
+    font-size: 40px;
+    color:  #008000;
+    margin-bottom: 15px;
+}
+
+.info-block h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.info-block p {
+    font-size: 15px;
+    color: #555;
+}
+
+/* Redes sociales */
+.social-media h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.social-media ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #555;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-media ul li a i {
+    font-size: 20px;
+    color:  #808080;
+}
+
+.social-media ul li a:hover {
+    background-color:  #808080;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .info-block {
+        margin-bottom: 20px;
+    }
+
+    .social-media ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-media ul li a {
+        justify-content: center;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 0;
+    text-align: center;
+    color: #333;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Permite que el footer se desplace al hacer scroll */
+    z-index: 1000;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333; /* Cambiado a negro */
+}
+
+.social-media {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-icon {
+    color: #333; /* Cambiado a negro */
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #FF69B4; /* Mantiene el color rosado al pasar el cursor */
+}
+
+/* Estilos para el carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Ocupa el 50% de la altura de la pantalla */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%; /* Ajusta la altura de las imágenes al contenedor */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%; /* La imagen ocupa todo el contenedor en altura */
+    object-fit: cover; /* Ajusta la imagen para que se centre y recorte sin distorsión */
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Ajustes responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}

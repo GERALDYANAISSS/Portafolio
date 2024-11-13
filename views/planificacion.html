@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Trabajo</title>
+    <link rel="stylesheet" href="css/planificacion.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div> <!-- Menú lateral con hamburguesa -->
+    <input type="checkbox" id="menu-toggle" style="display: none;">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <aside class="sidebar">
+        <div class="logo-section">
+            <img src="/assets/logo.png" alt="Foto de perfil">
+            <p>Mi Perfil</p>
+        </div>
+        <ul class="menu-list">
+            <li><a href="/perfil_fono.html"><i class="fas fa-sign-out-alt"></i> Mi Perfil</a></li>
+            <li><a href="/Pages/planificacion.html"><i class="fas fa-sign-out-alt"></i> Planificación</a></li>
+            <li><a href="/Pages/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+        </ul>
+    </aside>
+</div>
+
+<!-- Contenedor principal para formulario y planes guardados -->
+<div class="main-container">
+    <div class="form-container">
+        <h2>Formulario de Plan de Trabajo</h2>
+        <form id="workPlanForm">
+            <div class="form-group">
+                <label for="diagnosis">Diagnóstico medico:</label>
+                <textarea id="diagnosis" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="objectives">Objetivos:</label>
+                <textarea id="objectives" required></textarea>
+            </div>
+
+            <fieldset>
+                <legend class="centered-title">Datos del Paciente</legend>
+                <div class="form-group">
+                    <label for="patientName">Nombre:</label>
+                    <input type="text" id="patientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Edad:</label>
+                    <input type="number" id="age" min="0" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="centered-title">Datos del Padre o Tutor</legend>
+                <div class="form-group">
+                    <label for="parentName">Nombre y Apellido:</label>
+                    <input type="text" id="parentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentRUT">RUT:</label>
+                    <input type="text" id="parentRUT" placeholder="Ej. 12.345.678-9" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentPhone">Teléfono:</label>
+                    <input type="tel" id="parentPhone" placeholder="Ej. +56912345678" required>
+                </div>
+                <div class="form-group">
+                    <label for="parentOccupation">Ocupación:</label>
+                    <input type="text" id="parentOccupation" placeholder="Ej. Profesor" required>
+                </div>
+            </fieldset>
+            
+
+            <div class="form-group">
+                <label for="description">Descripción del Plan:</label>
+                <textarea id="description" class="large-textarea" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="observaciones">Observaciones:</label>
+                <textarea id="observaciones" class="large-textarea" required></textarea>
+            </div>            
+
+            <button type="submit">Guardar Plan</button>
+
+            <!-- Firma de la fonoaudióloga debajo del botón -->
+            <div class="signature-section">
+                <img src="/assets/firma.png" alt="Firma de la Fonoaudióloga" class="signature">
+                <p>Fernanda Lorca Ordenes - Fonoaudióloga</p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Sección de planes guardados -->
+    <div class="saved-plans">
+        <h3>Planes Guardados</h3>
+        <div id="plansList">No hay planes guardados.</div>
+    </div>
+</div>
+
+<script src="/js/planificacion.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña</title>
+    <link rel="stylesheet" href="css/cambiocontraseña.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <i class="fas fa-lock"></i> Contraseña
+            <a href="/perfil_paciente.html" class="back-link">Volver</a>
+        </header>
+
+        <div class="content">
+            <h2>Cambiar contraseña</h2>
+            <p>Aquí podrás realizar el cambio de una nueva contraseña para tu portal fonoudiologia. Al terminar el proceso deberás iniciar sesión nuevamente.</p>
+            
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="currentPassword">Ingresa tu contraseña actual *</label>
+                    <div class="input-container">
+                        <input type="password" id="currentPassword" placeholder="Ingresa tu contraseña actual" class="password-input">
+                        <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('currentPassword', this)"></i>
+                    </div>
+                    <a href="#" class="forgot-password">Olvidé mi contraseña <i class="fas fa-lock"></i></a>
+                </div>
+
+                <div class="form-group">
+                    <label for="newPassword">Ingresa tu nueva contraseña *</label>
+                    <div class="input-container">
+                        <input type="password" id="newPassword" placeholder="Ingresa tu nueva contraseña" class="password-input">
+                        <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('newPassword', this)"></i>
+                    </div>
+                </div>
+
+                <div class="password-requirements">
+                    <p>Por seguridad tu contraseña debe contener:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Mínimo 8 caracteres alfanuméricos</li>
+                        <li><i class="fas fa-check-circle"></i> 1 Letra mayúscula</li>
+                        <li><i class="fas fa-check-circle"></i> 1 Letra minúscula</li>
+                        <li><i class="fas fa-check-circle"></i> 1 Número como mínimo</li>
+                        <li><i class="fas fa-check-circle"></i> 1 Signo o símbolo ej: (, . & #) :!</li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Ingresa de nuevo la contraseña *</label>
+                    <div class="input-container">
+                        <input type="password" id="confirmPassword" placeholder="Ingresa de nuevo la contraseña" class="password-input">
+                        <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('confirmPassword', this)"></i>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-button" onclick="openModal()">Continuar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword(inputId, iconElement) {
+            const passwordInput = document.getElementById(inputId);
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                iconElement.classList.remove('fa-eye-slash');
+                iconElement.classList.add('fa-eye');
+            } else {
+                passwordInput.type = 'password';
+                iconElement.classList.remove('fa-eye');
+                iconElement.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
+        <!-- Modal de notificación -->
+        <div id="modal-notification" class="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2><span class="icon-container"><i class="fas fa-check-circle"></i></span> MiRedSalud</h2>
+                </header>
+                <div class="modal-body">
+                    <h3>¡Cambiaste tu contraseña exitosamente!</h3>
+                    <p>Esta contraseña deberás ingresarla al iniciar sesión en MiRedSalud. Te enviamos un registro del cambio de tu contraseña al correo <strong>***uerra27@gmail.com</strong></p>
+                    <button class="close-button" onclick="closeModal()">Ir a iniciar sesión</button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
