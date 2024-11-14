@@ -1,7 +1,8 @@
+/* Reset y Estilos Generales */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
@@ -24,11 +25,7 @@ h1 {
     text-align: center;
 }
 
-/* Menú lateral sin sombra ni borde */
-#menu-toggle {
-    display: none;
-}
-
+/* Menú lateral */
 .menu-icon {
     position: absolute;
     top: 20px;
@@ -37,10 +34,6 @@ h1 {
     cursor: pointer;
     color: #333;
     z-index: 1001;
-    background: none;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
 }
 
 .sidebar {
@@ -48,15 +41,12 @@ h1 {
     top: 0;
     left: 0;
     width: 250px;
-    height: 100vh;
-    background-color: #87CEEB;
-    color: #333;
+    height: 100%;
+    background-color: #5f36da;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     padding-top: 50px;
     z-index: 1000;
-    box-shadow: none;
-    border: none;
 }
 
 #menu-toggle:checked + .menu-icon + .sidebar {
@@ -73,11 +63,11 @@ h1 {
     height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
-    border: 2px solid #FF69B4;
+    border: 2px solid #bc69ff;
 }
 
 .logo-section p {
-    color: #FF69B4;
+    color: #e0e0e0;
     font-weight: bold;
     font-size: 18px;
 }
@@ -92,7 +82,7 @@ h1 {
 }
 
 .menu-list li a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
     display: flex;
@@ -104,16 +94,16 @@ h1 {
 
 .menu-list li a i {
     margin-right: 10px;
-    color: #FF69B4;
+    color: #fff;
 }
 
 .menu-list li a:hover,
 .menu-list li a.active {
-    background-color: #FF69B4;
+    background-color: #f0ecee2b;
     color: #fff;
 }
 
-/* Card Styles */
+/* Tarjetas */
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -160,7 +150,7 @@ h1 {
 }
 
 .button-container button {
-    background-color: #ff99cc;
+    background-color: #A569FF;
     color: #ffffff;
     border: none;
     padding: 10px 15px;
@@ -171,18 +161,18 @@ h1 {
 }
 
 .button-container button:hover {
-    background-color: #ff6699;
+    background-color: #8266ff;
 }
 
-/* Media Query para Tablets (pantallas de hasta 768px de ancho) */
+/* Responsive */
 @media (max-width: 768px) {
     .card-container {
-        grid-template-columns: 1fr 1fr; /* Cambia a 2 columnas */
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
     }
 
     .sidebar {
-        width: 200px; /* Reduce el ancho del sidebar */
+        width: 200px;
     }
 
     .menu-icon {
@@ -193,7 +183,7 @@ h1 {
 
     .card {
         padding: 15px;
-        flex-direction: column; /* Cambia a disposición en columna */
+        flex-direction: column;
     }
 
     .card img {
@@ -215,10 +205,9 @@ h1 {
     }
 }
 
-/* Media Query para Móviles (pantallas de hasta 480px de ancho) */
 @media (max-width: 480px) {
     .card-container {
-        grid-template-columns: 1fr; /* Cambia a 1 columna */
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 

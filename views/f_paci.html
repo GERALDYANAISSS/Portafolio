@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil paciente</title>
+    <link rel="stylesheet" href="css/f_paci.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Menú lateral con hamburguesa -->
+    <input type="checkbox" id="menu-toggle" style="display: none;">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <aside class="sidebar">
+        <div class="logo-section">
+            <img src="/assets/logo.png" alt="Foto de perfil" class="sidebar-profile-img">
+            <p class="sidebar-profile-name">Mi Perfil</p>
+        </div>
+        
+        <ul class="menu-list">
+            <li><a href="/perfil_paciente.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
+            <li><a href="/agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/informativo.html"><i class="fas fa-user-friends"></i> Informativo</a></li>
+            <li><a href="/chat.html"><i class="fas fa-sign-out-alt"></i> Atencion chat</a></li>
+            <li><a href="/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+        </ul>
+    </aside> 
+
+    <!-- Contenedor principal de perfil -->
+    <div class="profile-card">
+        <!-- Logo superior -->
+        <div class="header">
+            <img src="/assets/logo.png" alt="Logo de la Fonoaudióloga" class="logo">
+        </div>
+        
+        <!-- Foto de perfil y botón de cambio -->
+        <div class="profile-photo-container">
+            <input type="file" id="profilePhotoInput" style="display: none;" onchange="changeProfilePhoto(event)">
+            <img src="default-profile.jpg" alt="Foto de Perfil" id="profilePhoto" class="profile-photo">
+            <button class="change-photo-btn" onclick="document.getElementById('profilePhotoInput').click()">Cambiar Foto</button>
+        </div>
+        
+        <!-- Información personal y profesional -->
+        <div class="profile-details">
+            <!-- Datos personales tutor o cuidador -->
+            <div class="personal-info">
+                <h2>Datos Personales tutor o cuidador</h2>
+                <p><strong>Nombre Completo:</strong> Anais Geraldy Lagos Suarez</p>
+                <p><strong>Rut</strong> 20.435.589-4</p>
+                <p><strong>Correo electronico</strong> Geraldylagos@gmail.com</p>
+                <p><strong>profesion</strong> ninguna</p>
+                <p><strong>Numero de telefono</strong> 9 88998889</p>
+                <p><strong>Correo electronico</strong> Geraldylagos@gmail.com</p>
+                <p><strong>Direccion</strong> puente alto , 2209</p>
+                
+            </div>
+
+            <!-- Información personal del paciente -->
+            <div class="professional-info">
+                <h2>Información Personal del paciente</h2>
+                <p><strong>Nombre Completo:</strong> Anais Geraldy Lagos Suarez</p>
+                <p><strong>Edad</strong>5</p>
+                <p><strong>Nivel educacional:</strong> 2 basico</p>
+                <p><strong>Rut:</strong>20.435.589-2 </p>
+                <p><strong>Fecha de nacimiento</strong> 22.05.2020</p>
+                
+        </div>
+    </div>
+
+    <script src="/js/f_paci.js"></script> 
+</body>
+</html>

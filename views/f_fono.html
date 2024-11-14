@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fomulario-Fonoaudiología</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/f_fono.css">
+    <script src="/js/f_fono.js" defer></script>
+</head>
+<body>
+
+    <!-- Menú lateral con hamburguesa -->
+    <input type="checkbox" id="menu-toggle" style="display: none;">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <aside class="sidebar">
+        <div class="logo-section">
+            <img src="/assets/logo.png" alt="Foto de perfil">
+            <p class="profile-name">Mi Perfil</p>
+        </div>
+        <ul class="menu-list">
+            <ul class="menu-list">
+                <li><a href="/perfil_fono.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
+                <li><a href="/f_fono.html"><i class="fas fa-user"></i> Edicion de fonoaudiologia</a></li>
+                <li><a href="/planificacion.html"><i class="fas fa-calendar-alt"></i> Planificación</a></li>
+                <li><a href="/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+
+        </ul>
+    </aside>
+        <div class="profile-container">
+            <div class="profile-header">
+                <label for="profile-upload">
+                    <img id="profile-picture" src="profile-placeholder.png" alt="Imagen de perfil">
+                </label>
+                <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
+                <div>
+                    <h1>Fonoaudiologos</h1>
+                    <button class="change-photo" onclick="document.getElementById('profile-upload').click()">Cambiar imagen de perfil</button>
+                </div>
+            </div>
+    
+            <div class="profile-sections">
+            <!-- Información de la Fonoaudióloga -->
+                <div class="profile-section">
+                    <h3>Fonoaudiólogo</h3>
+                    <div class="form-field">
+                        <label for="guardian-name">Nombre Completo:</label>
+                        <input type="text" id="guardian-name" placeholder="Nombre completo">
+                    </div>
+                    <div class="form-field">
+                        <label for="guardian-occupation">Rut</label>
+                        <input type="text" id="guardian-occupation" placeholder="Rut">
+                    </div>
+                    <div class="form-field">
+                        <label for="guardian-profession">Numero de telefono</label>
+                        <input type="text" id="guardian-profession" placeholder="+56 9 1234 5678">
+                    </div>
+                    <div class="form-field">
+                        <label for="guardian-phone">Correo personal:</label>
+                        <input type="tel" id="guardian-phone" placeholder="Correo electronico personal">
+                    </div>
+                    <div class="form-field">
+                        <label for="guardian-rut">Correo profesional</label>
+                        <input type="text" id="guardian-rut" placeholder="Correo electronico profesional">
+                    </div>
+                    <div class="form-field">
+                        <label for="guardian-birthdate">Direccion</label>
+                        <input type="text" id="guardian-direccion" placeholder="Ej: puente alto, 2002">
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <div class="form-field">
+                        <label for="patient-name">Rol</label>
+                        <input type="text" id="patient-name" placeholder="Rol">
+                    </div>
+                    <div class="form-field">
+                        <label for="patient-name">Universidad</label>
+                        <input type="text" id="patient-name" placeholder="Universidad">
+                    </div>
+                    <div class="form-field">
+                        <label for="patient-name">Carrera</label>
+                        <input type="text" id="patient-name" placeholder="Carrera">
+                    </div>
+                    <div class="form-field">
+                        <label for="patient-education">Especializacion</label>
+                        <input type="text" id="patient-education" placeholder="Especializacion">
+                    </div>
+    
+            <!-- Guardar cambios botón principal -->
+            <div class="save-button-container">
+                <button class="save-button" onclick="saveChanges()">Guardar cambios</button>
+            </div>
+        </div>
+    
+    </body>
+    </html>

@@ -35,8 +35,7 @@ body {
     left: 0;
     width: 250px;
     height: 100%;
-    background-color: #87CEEB;
-    color: #333;
+    background-color: #5f36da;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     padding-top: 50px;
@@ -57,11 +56,11 @@ body {
     height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
-    border: 2px solid #FF69B4;
+    border: 2px solid #bc69ff;
 }
 
 .logo-section p {
-    color: #FF69B4;
+    color: #e0e0e0;
     font-weight: bold;
     font-size: 18px;
 }
@@ -76,7 +75,7 @@ body {
 }
 
 .menu-list li a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
     display: flex;
@@ -88,12 +87,12 @@ body {
 
 .menu-list li a i {
     margin-right: 10px;
-    color: #FF69B4;
+    color: #fff;
 }
 
 .menu-list li a:hover,
 .menu-list li a.active {
-    background-color: #FF69B4;
+    background-color: #f0ecee2b;
     color: #fff;
 }
 
@@ -179,11 +178,6 @@ body {
 .accordion.active .icon {
     transform: rotate(180deg);
 }
-
-
-
-
-
 
 /* Contenedor para el calendario */
 .calendar-container {

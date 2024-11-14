@@ -1,3 +1,4 @@
+/* Reset y estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -28,21 +29,17 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     padding: 18px;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.header i {
-    font-size: 1.2rem;
-}
-
+.header i,
 .header .back-link {
+    font-size: 1.2rem;
     color: white;
-    font-size: 1rem;
-    text-decoration: none;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .content {
@@ -95,7 +92,6 @@ body {
     font-size: 0.95rem;
     background-color: transparent;
     color: #333;
-    border-radius: 8px;
 }
 
 .input-container .toggle-password {
@@ -115,10 +111,10 @@ body {
 }
 
 .password-requirements {
-    text-align: left;
     font-size: 0.9rem;
     color: #00796b;
     margin: 15px 0;
+    text-align: left;
 }
 
 .password-requirements ul {
@@ -148,8 +144,8 @@ body {
     border-radius: 8px;
     font-size: 1rem;
     cursor: not-allowed;
-    transition: background-color 0.3s ease;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .submit-button.active {
@@ -185,19 +181,18 @@ body {
 }
 
 .modal-header h2 {
-    font-family: 'Segoe UI', sans-serif;
     color: #009688;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.5rem;
 }
 
 .modal-body h3 {
     color: #333;
     font-weight: bold;
-    margin-top: 15px;
     font-size: 1.2rem;
+    margin-top: 15px;
 }
 
 .modal-body p {

@@ -18,89 +18,49 @@
             <p>Mi Perfil</p>
         </div>
         <ul class="menu-list">
-            <li><a href="/perfil_fono.html"><i class="fas fa-sign-out-alt"></i> Mi Perfil</a></li>
-            <li><a href="/Pages/planificacion.html"><i class="fas fa-sign-out-alt"></i> Planificación</a></li>
-            <li><a href="/Pages/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
-        </ul>
+            <li><a href="/perfil_fono.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
+            <li><a href="/f_fono.html"><i class="fas fa-user"></i> Edicion de fonoaudiologia</a></li>
+            <li><a href="/planificacion.html"><i class="fas fa-calendar-alt"></i> Planificación</a></li>
+            <li><a href="/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
     </aside>
 </div>
 
-<!-- Contenedor principal para formulario y planes guardados -->
-<div class="main-container">
-    <div class="form-container">
-        <h2>Formulario de Plan de Trabajo</h2>
-        <form id="workPlanForm">
-            <div class="form-group">
-                <label for="diagnosis">Diagnóstico medico:</label>
-                <textarea id="diagnosis" required></textarea>
-            </div>
+<div class="container">
+    <div class="form-section">
+      <h1>Formulario de Plan de Trabajo</h1>
+      <form id="planForm">
+        <label>Diagnóstico médico:</label>
+        <textarea id="diagnostico" placeholder="Diagnóstico médico"></textarea>
 
-            <div class="form-group">
-                <label for="objectives">Objetivos:</label>
-                <textarea id="objectives" required></textarea>
-            </div>
+        <label>Objetivos:</label>
+        <textarea id="objetivos" placeholder="Objetivos"></textarea>
 
-            <fieldset>
-                <legend class="centered-title">Datos del Paciente</legend>
-                <div class="form-group">
-                    <label for="patientName">Nombre:</label>
-                    <input type="text" id="patientName" required>
-                </div>
-                <div class="form-group">
-                    <label for="age">Edad:</label>
-                    <input type="number" id="age" min="0" required>
-                </div>
-            </fieldset>
+        <label>Datos del Paciente</label>
+        <input type="text" id="nombrePaciente" placeholder="Nombre">
+        <input type="number" id="edadPaciente" placeholder="Edad">
 
-            <fieldset>
-                <legend class="centered-title">Datos del Padre o Tutor</legend>
-                <div class="form-group">
-                    <label for="parentName">Nombre y Apellido:</label>
-                    <input type="text" id="parentName" required>
-                </div>
-                <div class="form-group">
-                    <label for="parentRUT">RUT:</label>
-                    <input type="text" id="parentRUT" placeholder="Ej. 12.345.678-9" required>
-                </div>
-                <div class="form-group">
-                    <label for="parentPhone">Teléfono:</label>
-                    <input type="tel" id="parentPhone" placeholder="Ej. +56912345678" required>
-                </div>
-                <div class="form-group">
-                    <label for="parentOccupation">Ocupación:</label>
-                    <input type="text" id="parentOccupation" placeholder="Ej. Profesor" required>
-                </div>
-            </fieldset>
-            
+        <label>Datos del Padre o Tutor</label>
+        <input type="text" id="nombreTutor" placeholder="Nombre y Apellido">
+        <input type="text" id="rut" placeholder="RUT">
+        <input type="text" id="telefono" placeholder="Teléfono">
+        <input type="text" id="ocupacion" placeholder="Ocupación">
 
-            <div class="form-group">
-                <label for="description">Descripción del Plan:</label>
-                <textarea id="description" class="large-textarea" required></textarea>
-            </div>
+        <label>Descripción del Plan:</label>
+        <textarea id="descripcionPlan" placeholder="Descripción del Plan"></textarea>
 
-            <div class="form-group">
-                <label for="observaciones">Observaciones:</label>
-                <textarea id="observaciones" class="large-textarea" required></textarea>
-            </div>            
+        <label>Observaciones:</label>
+        <textarea id="observaciones" placeholder="Observaciones"></textarea>
 
-            <button type="submit">Guardar Plan</button>
-
-            <!-- Firma de la fonoaudióloga debajo del botón -->
-            <div class="signature-section">
-                <img src="/assets/firma.png" alt="Firma de la Fonoaudióloga" class="signature">
-                <p>Fernanda Lorca Ordenes - Fonoaudióloga</p>
-            </div>
-        </form>
+        <button type="button" onclick="guardarPlan()">Guardar Plan</button>
+      </form>
+      <p class="firma">Firma de la Fonoaudióloga<br>Fernanda Lorca Órdenes - Fonoaudióloga</p>
     </div>
 
-    <!-- Sección de planes guardados -->
     <div class="saved-plans">
-        <h3>Planes Guardados</h3>
-        <div id="plansList">No hay planes guardados.</div>
+      <h2>Planes Guardados</h2>
+      <ul id="planesList"></ul>
     </div>
-</div>
-
-<script src="/js/planificacion.js"></script>
-
+  </div>
+  <script src="/js/planificacion.js"></script>
 </body>
 </html>

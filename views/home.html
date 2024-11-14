@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fonoudiologa en fonoudiologia</title>
+    <title>Fonoaudióloga</title>
     <link rel="stylesheet" href="/css/home.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
@@ -15,8 +15,12 @@
                 <a href="/home" class="logo">
                     <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red fonoaudiologo">
                 </a>
+                <!-- Icono de hamburguesa para dispositivos pequeños -->
+                <button class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav class="navbar">
-                    <ul>
+                    <ul class="nav-links">
                         <li><a href="/home">Home</a></li>
                         <li><a href="/recomendaciones">Recomendaciones</a></li>
                         <li><a href="/nosotros">Nosotros</a></li>
@@ -27,79 +31,73 @@
             </div>
         </div>
     </header>
-    <!-- Carrusel de imágenes -->
-<div class="carousel-container">
-    <div class="carousel-slide">
-        <img src="assets/carrusel.jpg" alt="Imagen 1">
-        <img src="assets/carrusel1.jpg" alt="Imagen 2">
-        <img src="assets/carrusel3.jpg" alt="Imagen 3">
-        
-    </div>
-    <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
-</div>
 
+    <!-- Carrusel de imágenes -->
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="assets/carrusel.jpg" alt="Imagen 1">
+            <img src="assets/carrusel1.jpg" alt="Imagen 2">
+            <img src="assets/carrusel3.jpg" alt="Imagen 3">
+        </div>
+        <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
 
     <!-- Contenido Principal -->
     <main class="container">
-        <main class="container">
-            <!-- Tarjeta de Abordaje Terapéutico -->
-            <section class="section">
-                <div class="therapeutic-approach-card"> 
-                    <h1>¿Que es el fonoaudiologo? </h1>
-                    <p class="approach-definition">Un fonoaudiólogo (o “fono”) es un profesional especializado en ayudar a las personas a desarrollar y mejorar sus habilidades de comunicación. Esto incluye el habla, el lenguaje, la voz, la audición y la deglución (es decir, la capacidad de tragar correctamente).
-                        El trabajo de un fonoaudiólogo es especialmente útil para niños que están aprendiendo a hablar, a entender el lenguaje y a comunicarse en general. También ayuda a personas de todas las edades que tienen dificultades en estas áreas, ya sea por condiciones de nacimiento, por alguna enfermedad, accidente, o incluso el envejecimiento.
-                        </p>
-    <!-- Tarjeta de Abordaje Terapéutico -->
-
-        <div class="therapeutic-approach-card"> 
-            <h1>¿Cuando acudir al fonoaudiolo?</h1>
-                        <p>Si tu hijo (a) tiene 12 meses y no utiliza jerga (hablar en su propio idioma), no responde al nombre, no presenta contacto visual,  no sigue instrucciones simples.</p>
-                        <p>Tiene 18 meses y aun no dice sus primeras palabras</p>
-                        <p>Si tiene 24 meses y tiene un vocabulario reducido (menos de 20 palabras).</p>
-                        <p>Tiene 36 meses y le entiendes muy poco de lo que habla.  </p>
-                    </ul>
-                </div>
-            </section>
+        <section class="section">
+            <div class="therapeutic-approach-card"> 
+                <h1 class="aproach-title">¿Qué es el fonoaudiólogo?</h1>
+                <p class="approach-definition">Un fonoaudiólogo (o “fono”) es un profesional especializado en ayudar a las personas a desarrollar y mejorar sus habilidades de comunicación. Esto incluye el habla, el lenguaje, la voz, la audición y la deglución (es decir, la capacidad de tragar correctamente). El trabajo de un fonoaudiólogo es especialmente útil para niños que están aprendiendo a hablar, a entender el lenguaje y a comunicarse en general. También ayuda a personas de todas las edades que tienen dificultades en estas áreas, ya sea por condiciones de nacimiento, por alguna enfermedad, accidente, o incluso el envejecimiento.</p>
+            </div>
+            <div class="therapeutic-approach-card"> 
+                <h1 class="aproach-title">¿Cuándo acudir al fonoaudiólogo?</h1>
+                <p  class="approach-definition">Si tu hijo (a) tiene 12 meses y no utiliza jerga (hablar en su propio idioma), no responde al nombre, no presenta contacto visual, no sigue instrucciones simples. Tiene 18 meses y aún no dice sus primeras palabras. Si tiene 24 meses y tiene un vocabulario reducido (menos de 20 palabras). Tiene 36 meses y le entiendes muy poco de lo que habla.</p>
+            </div>
+        </section>
         
-            <!-- Cuadros de Beneficios de la Psicoterapia -->
-            <section class="section">
-                <h1 class="main-title">¿Que diagnosticos trata el fonoudiologo?</h1>
-                <div class="benefit-container">
-                    <div class="benefit-item">
-                        <i class="fas fa-child"></i>
-                        <h3>Retraso global del desarrollo</h3>
-                        <p>Corresponde a un retraso significativo en el desarrollo de las habilidades cognitivas y adaptativas, que se manifiesta en al menos dos áreas de desarrollo. Estas áreas incluyen el lenguaje, la motricidad, la cognición, la interacción social y las habilidades de autorregulación.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-volume-up"></i>
-                        <h3>Trastorno de los sonidos del habla (TSH).</h3>
-                        <p>Los trastornos de los sonidos del habla son un conjunto de dificultades que afectan la capacidad de una persona para producir los sonidos del habla de manera clara y precisa, lo que puede interferir con la comunicación efectiva.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-brain"></i>
-                        <h3>Trastorno especifico del lenguaje (TEL)</h3>
-                        <p>Se caracteriza por un desarrollo anormal del lenguaje que afecta la comprensión (lenguaje receptivo), la expresión (lenguaje expresivo) o ambas, sin que existan causas médicas, sensoriales (como la pérdida auditiva) o sociales (como el abuso o la negligencia) que justifiquen el retraso. Los niños con TEL tienen dificultades para adquirir y usar el lenguaje de manera adecuada para su edad, aunque no presentan otras alteraciones del desarrollo que puedan ser la causa de estas dificultades..</p>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-infinity"></i>
-                        <h3>Trastorno del lenguaje asociado a Trastorno del espectro autista.</h3>
-                        <p>Es una dificultad en el desarrollo del lenguaje que se presenta en personas con TEA, y que afecta diversas áreas de la comunicación, incluyendo la comprensión del lenguaje, la expresión verbal, la interacción social y la funcionalidad comunicativa en general.</p>
-                    </div>
+        <!-- Cuadros de Beneficios de la Psicoterapia -->
+        <section class="section">
+            <h1 class="main-title">¿Qué diagnósticos trata el fonoaudiólogo?</h1>
+            <div class="benefit-container">
+                <div class="benefit-item">
+                    <i class="fas fa-child"></i>
+                    <h2>Retraso global del desarrollo</h3>
+                    <p class="approach-definition">Corresponde a un retraso significativo en el desarrollo de las habilidades cognitivas y adaptativas, que se manifiesta en al menos dos áreas de desarrollo. Estas áreas incluyen el lenguaje, la motricidad, la cognición, la interacción social y las habilidades de autorregulación.</p>
                 </div>
-            </section>
-        </main>
-        <footer>
-            <div class="footer-container">
-                <p>&copy; 2024. Todos los derechos reservados.</p>
-                <div class="social-media">
-                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <div class="benefit-item">
+                    <i class="fas fa-volume-up"></i>
+                    <h2 class="aproach-title">Trastorno de los sonidos del habla (TSH)</h3>
+                    <p class="approach-definition">Los trastornos de los sonidos del habla son un conjunto de dificultades que afectan la capacidad de una persona para producir los sonidos del habla de manera clara y precisa, lo que puede interferir con la comunicación efectiva.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-brain"></i>
+                    <h2 class="aproach-title">Trastorno específico del lenguaje (TEL)</h3>
+                    <p class="approach-definition">Se caracteriza por un desarrollo anormal del lenguaje que afecta la comprensión (lenguaje receptivo), la expresión (lenguaje expresivo) o ambas, sin que existan causas médicas, sensoriales (como la pérdida auditiva) o sociales (como el abuso o la negligencia) que justifiquen el retraso.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-infinity"></i>
+                    <h2 class="aproach-title">Trastorno del lenguaje asociado a Trastorno del espectro autista</h3>
+                    <p class="approach-definition">Es una dificultad en el desarrollo del lenguaje que se presenta en personas con TEA, y que afecta diversas áreas de la comunicación, incluyendo la comprensión del lenguaje, la expresión verbal, la interacción social y la funcionalidad comunicativa en general.</p>
                 </div>
             </div>
-        </footer>
-        
+        </section>
+    </main>
 
-        <script src="/js/home.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    <script src="/js/home.js"></script>
+</body>
+</html>

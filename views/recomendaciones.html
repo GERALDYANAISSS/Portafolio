@@ -6,11 +6,10 @@
     <link rel="stylesheet" href="/css/recomendaciones.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>fonoaudiologia - Home</title>
 </head>
 <body>
-   <header>
+    <header>
         <div class="menu">
             <a href="home.html" class="logo">
                 <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red PsicoVínculo">
@@ -24,58 +23,76 @@
                     <li><a href="/iniciarsesion">Inicia Sesión</a></li>
                 </ul>
             </nav>
+            <!-- Botón de menú hamburguesa -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
+        <!-- Menú hamburguesa para móviles -->
+        <nav class="navbar-mobile" id="mobileMenu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/recomendaciones">Recomendaciones</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/contactanos">Contacto</a></li>
+                <li><a href="/iniciarsesion">Inicia Sesión</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Sección "Quiénes Somos" -->
-    <section class="about-us">
-        <h1>¿Que es la estimulacion temprana?</h1>
-        <p>es un conjunto de actividades y estrategias que se emplean para apoyar el desarrollo de habilidades en niños desde su nacimiento hasta los seis años de edad, una etapa en la que su cerebro es muy receptivo y adaptable. El objetivo es potenciar al máximo sus capacidades motoras, cognitivas, sociales y emocionales en un ambiente seguro y positivo.</p>
-        <p>Través de ejercicios de juego, contacto y comunicación, ayudamos a que el niño alcance sus hitos de desarrollo, como gatear, hablar, reconocer emociones, entre otros. Cada actividad se adapta a su edad y a su ritmo de aprendizaje, porque cada niño es único</p>
-    </section>
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- Sección "Quiénes Somos" -->
+        <section class="about-us">
+            <h1>¿Que es la estimulacion temprana?</h1>
+            <p>es un conjunto de actividades y estrategias que se emplean para apoyar el desarrollo de habilidades en niños desde su nacimiento hasta los seis años de edad, una etapa en la que su cerebro es muy receptivo y adaptable. El objetivo es potenciar al máximo sus capacidades motoras, cognitivas, sociales y emocionales en un ambiente seguro y positivo.</p>
+            <p>Través de ejercicios de juego, contacto y comunicación, ayudamos a que el niño alcance sus hitos de desarrollo, como gatear, hablar, reconocer emociones, entre otros. Cada actividad se adapta a su edad y a su ritmo de aprendizaje, porque cada niño es único</p>
+        </section>
 
-    <center><h2>Estimulacion en casa</h2></center>
+        <center><h2>Estimulacion en casa</h2></center>
 
-    <!-- Sección de Tarjetas -->
-    <section class="tarjetas-container">
-        <div class="tarjeta">
-            <img src="/assets/imitacion.jpg" alt="¿Qué hacemos?" class="tarjeta-img">
-            <div class="tarjeta-content">
-                <h3>Imitaciones de sonidos y Palabras</h3>
-                <p>Juega con tu hijo a imitar sonidos de animales o de objetos cotidianos, como "miau" (gato), "muu" (vaca). Esto ayuda a que el niño se acostumbre a usar sonidos para comunicarse.</p>
+        <!-- Sección de Tarjetas -->
+        <section class="tarjetas-container">
+            <div class="tarjeta">
+                <img src="/assets/imitacion.jpg" alt="¿Qué hacemos?" class="tarjeta-img">
+                <div class="tarjeta-content">
+                    <h3>Imitaciones de sonidos y Palabras</h3>
+                    <p>Juega con tu hijo a imitar sonidos de animales o de objetos cotidianos, como "miau" (gato), "muu" (vaca). Esto ayuda a que el niño se acostumbre a usar sonidos para comunicarse.</p>
+                </div>
             </div>
-        </div>
-        <div class="tarjeta">
-            <img src="/assets/cancion.jpg" alt="Nuestro enfoque" class="tarjeta-img">
-            <div class="tarjeta-content">
-                <h3>Canciones y rimas</h3>
-                <p>Canta canciones infantiles y rimas con movimientos, como aplausos o golpecitos. Estas canciones suelen tener palabras repetitivas que ayudan a los niños a recordar y aprender.</p>
+            <div class="tarjeta">
+                <img src="/assets/cancion.jpg" alt="Nuestro enfoque" class="tarjeta-img">
+                <div class="tarjeta-content">
+                    <h3>Canciones y rimas</h3>
+                    <p>Canta canciones infantiles y rimas con movimientos, como aplausos o golpecitos. Estas canciones suelen tener palabras repetitivas que ayudan a los niños a recordar y aprender.</p>
+                </div>
             </div>
-        </div>
-        <div class="tarjeta">
-            <img src="/assets/juegos.jpg" alt="Nuestro enfoque" class="tarjeta-img">
-            <div class="tarjeta-content">
-                <h3>Juegos de señas y gestos</h3>
-                <p>Haz gestos para representar palabras y enseña al niño a usarlos, como señalar una bebida cuando tiene sed o juntar las manos para "por favor". Esto es útil especialmente si aún no usa muchas palabras.</p>
+            <div class="tarjeta">
+                <img src="/assets/juegos.jpg" alt="Nuestro enfoque" class="tarjeta-img">
+                <div class="tarjeta-content">
+                    <h3>Juegos de señas y gestos</h3>
+                    <p>Haz gestos para representar palabras y enseña al niño a usarlos, como señalar una bebida cuando tiene sed o juntar las manos para "por favor". Esto es útil especialmente si aún no usa muchas palabras.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Video -->
-    <section class="video-container">
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/IRdHxNg-wu4" title="Video sobre estimulación temprana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
-    
+        <!-- Video -->
+        <section class="video-container">
+            <iframe width="100%" height="500" src="https://www.youtube.com/embed/IRdHxNg-wu4" title="Video sobre estimulación temprana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </div>
+
     <footer>
         <div class="footer-container">
             <p>&copy; 2024. Todos los derechos reservados.</p>
-            <div class="social-media">
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
-            </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>

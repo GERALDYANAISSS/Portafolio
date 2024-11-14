@@ -16,7 +16,9 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    padding-bottom: 100px; /* Espacio extra para separar el contenido del footer */
 }
+
 /* Encabezado */
 header {
     background-color: #ffffff;
@@ -61,7 +63,7 @@ header {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1400px; /* Aumentamos el ancho máximo de la contenedora de las tarjetas */
+    max-width: 1400px;
     width: 100%;
 }
 
@@ -70,11 +72,13 @@ header {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    max-width: 1100px; /* Aumentamos el ancho máximo de la tarjeta para mayor expansión */
+    max-width: 1100px;
     width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-top: 140px; /* Espacio debajo del header */
+    margin-bottom: 40px; /* Espacio entre la tarjeta y el footer */
 }
 
 .profile-header {
@@ -120,8 +124,8 @@ header {
 /* Organiza los elementos de la lista en 4 columnas para mayor expansión */
 .consult-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales */
-    gap: 10px 20px; /* Espacio entre los elementos */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 20px;
 }
 
 .consult-list li {
@@ -156,6 +160,34 @@ header {
     color: white;
 }
 
+/* Footer fijado en la parte inferior */
+footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 0;
+    text-align: center;
+    color: #333333;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
     .cards-container {
         flex-direction: column;
@@ -181,8 +213,19 @@ header {
         width: 100%;
     }
 
-    /* Cambia a una sola columna en pantallas pequeñas */
     .consult-list {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .benefit-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-item {
+        flex: 1 1 100%;
     }
 }

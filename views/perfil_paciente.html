@@ -19,88 +19,92 @@
             <p class="profile-name">Mi Perfil</p>
         </div>
         <ul class="menu-list">
-            <ul class="menu-list">
-                <li><a href="/perfil_paciente.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
-                <li><a href="/Pages/agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
-                <li><a href="/Pages/informativo.html"><i class="fas fa-user-friends"></i> Informativo</a></li>
-                <li><a href="/Pages/chat.html"><i class="fas fa-sign-out-alt"></i> Atencion chat</a></li>
-                <li><a href="/Pages/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
-
+            <li><a href="/perfil_paciente.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
+            <li><a href="/agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/informativo.html"><i class="fas fa-user-friends"></i> Informativo</a></li>
+            <li><a href="/chat.html"><i class="fas fa-sign-out-alt"></i> Atención chat</a></li>
+            <li><a href="/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
     </aside>
-        <div class="profile-container">
-            <div class="profile-header">
-                <label for="profile-upload">
-                    <img id="profile-picture" src="profile-placeholder.png" alt="Imagen de perfil">
-                </label>
-                <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
-                <div>
-                    <h1>Paciente</h1>
-                    <button class="change-photo" onclick="document.getElementById('profile-upload').click()">Cambiar imagen de perfil</button>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <label for="profile-upload">
+                <img id="profile-picture" src="profile-placeholder.png" alt="Imagen de perfil">
+            </label>
+            <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
+            <button class="change-photo" onclick="document.getElementById('profile-upload').click()">Cambiar Foto</button>
+        </div>
+
+        <div class="profile-sections">
+            <!-- Información del Padre o Cuidador -->
+            <div class="profile-section">
+                <h3>Datos del Padre o Cuidador</h3>
+                <div class="form-field">
+                    <label for="guardian-name">Nombre Completo:</label>
+                    <input type="text" id="guardian-name" placeholder="Nombre completo del cuidador">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-rut">RUT:</label>
+                    <input type="text" id="guardian-rut" placeholder="RUT del cuidador">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-email">Correo electrónico</label>
+                    <input type="text" id="guardian-correo" placeholder="Correo del cuidador">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-profession">Profesión:</label>
+                    <input type="text" id="guardian-profession" placeholder="Profesión del cuidador">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-phone">Número de Teléfono:</label>
+                    <input type="tel" id="guardian-phone" placeholder="+56 9 1234 5678">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-address">Dirección:</label>
+                    <input type="text" id="guardian-address" placeholder="Ej: Puente Alto 2203">
                 </div>
             </div>
-    
-            <div class="profile-sections">
-                <!-- Información del Padre o Cuidador -->
-                <div class="profile-section">
-                    <h3>Datos del Padre o Cuidador</h3>
-                    <div class="form-field">
-                        <label for="guardian-name">Nombre Completo:</label>
-                        <input type="text" id="guardian-name" placeholder="Nombre completo del cuidador">
-                    </div>
-                    <div class="form-field">
-                        <label for="guardian-occupation">Ocupación:</label>
-                        <input type="text" id="guardian-occupation" placeholder="Ocupación del cuidador">
-                    </div>
-                    <div class="form-field">
-                        <label for="guardian-profession">Profesión:</label>
-                        <input type="text" id="guardian-profession" placeholder="Profesión del cuidador">
-                    </div>
-                    <div class="form-field">
-                        <label for="guardian-phone">Número de Teléfono:</label>
-                        <input type="tel" id="guardian-phone" placeholder="+56 9 1234 5678">
-                    </div>
-                    <div class="form-field">
-                        <label for="guardian-rut">RUT:</label>
-                        <input type="text" id="guardian-rut" placeholder="RUT del cuidador">
-                    </div>
-                    <div class="form-field">
-                        <label for="guardian-birthdate">Fecha de Nacimiento:</label>
-                        <input type="date" id="guardian-birthdate">
-                    </div>
+
+            <!-- Información del Paciente -->
+            <div class="profile-section">
+                <h3>Datos del Paciente</h3>
+                <div class="form-field">
+                    <label for="patient-name">Nombre Completo:</label>
+                    <input type="text" id="patient-name" placeholder="Nombre completo del paciente">
                 </div>
-    
-                <!-- Información del Paciente -->
-                <div class="profile-section">
-                    <h3>Datos del Paciente</h3>
-                    <div class="form-field">
-                        <label for="patient-name">Nombre Completo:</label>
-                        <input type="text" id="patient-name" placeholder="Nombre completo del paciente">
-                    </div>
-                    <div class="form-field">
-                        <label for="patient-age">Edad:</label>
-                        <input type="number" id="patient-age" placeholder="Edad del paciente">
-                    </div>
-                    <div class="form-field">
-                        <label for="patient-education">Nivel Educacional:</label>
-                        <input type="text" id="patient-education" placeholder="Nivel educacional del paciente">
-                    </div>
-                    <div class="form-field">
-                        <label for="patient-rut">RUT:</label>
-                        <input type="text" id="patient-rut" placeholder="RUT del paciente">
-                    </div>
-                    <div class="form-field">
-                        <label for="patient-birthdate">Fecha de Nacimiento:</label>
-                        <input type="date" id="patient-birthdate">
-                    </div>
+                <div class="form-field">
+                    <label for="patient-age">Edad:</label>
+                    <input type="number" id="patient-age" placeholder="Edad del paciente">
                 </div>
-            </div>
-    
-            <!-- Guardar cambios botón principal -->
-            <div class="save-button-container">
-                <button class="save-button" onclick="saveChanges()">Guardar cambios</button>
+                <div class="form-field">
+                    <label for="patient-education">Nivel Educacional:</label>
+                    <input type="text" id="patient-education" placeholder="Nivel educacional del paciente">
+                </div>
+                <div class="form-field">
+                    <label for="patient-rut">RUT:</label>
+                    <input type="text" id="patient-rut" placeholder="RUT del paciente">
+                </div>
+                <div class="form-field">
+                    <label for="patient-birthdate">Fecha de Nacimiento:</label>
+                    <input type="date" id="patient-birthdate">
+                </div>
             </div>
         </div>
-    
-    </body>
-    </html>
+
+                        <!-- Texto de instrucciones centrado y separado de los cuadros -->
+                <div class="instructions">
+                    <p>
+                        Antes de agendar una cita con la fonoaudióloga, por favor asegúrese de actualizar los datos del paciente y del tutor.
+                        Esta información es fundamental para una atención adecuada y personalizada, y permitirá a la fonoaudióloga conocer el contexto
+                        y las necesidades del paciente.
+                    </p>
+                </div>
+
+        <!-- Botón Guardar cambios alineado a la derecha -->
+        <div class="save-button-container-right">
+            <button class="save-button" onclick="saveChanges()">Guardar cambios</button>
+        </div>    
+
+</body>
+</html>
