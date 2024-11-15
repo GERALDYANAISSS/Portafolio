@@ -65,12 +65,11 @@ app.post('/registro', async (req, res) => {
         const { error: dbError } = await supabase.from('usuarios').insert([{
             usuario_id: userId,
             email: correo,
-            nombre,
-            apellido,
-            rut,
+            nombre: nombre+" "+apellido,
+            rut: rut,
             fecha_nacimiento: fechaNacimiento,
-            telefono,
-            direccion,
+            telefono: telefono,
+            direccion: direccion,
             tipo_usuario: tipoUsuario
         }]);
 
