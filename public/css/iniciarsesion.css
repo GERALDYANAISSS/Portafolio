@@ -210,6 +210,17 @@ footer {
     justify-content: center;
 }
 
+.alerta-error,
+.alerta-exito {
+    display: none;
+    color: red; /* o el color que prefieras para el mensaje de error */
+    font-weight: bold;
+}
+.alerta-exito {
+    color: green; /* o el color que prefieras para el mensaje de éxito */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {

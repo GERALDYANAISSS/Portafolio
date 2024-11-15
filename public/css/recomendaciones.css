@@ -75,9 +75,13 @@ header {
 
 /* Menú hamburguesa en dispositivos medianos y pequeños */
 .menu-toggle {
+/* Icono de hamburguesa (oculto en dispositivos grandes) */
     display: none;
     font-size: 24px;
+    background: none;
+    border: none;
     cursor: pointer;
+    color: #333;
 }
 
 .navbar-mobile {

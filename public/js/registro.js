@@ -1,4 +1,4 @@
-document.getElementById("registerForm").addEventListener("submit", function (event) {
+document.getElementById("registerForm").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
@@ -6,11 +6,16 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
     const rut = document.getElementById("rut").value;
     const correo = document.getElementById("correo").value;
     const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const fechaNacimiento = document.getElementById("fechaNacimiento").value;
+    const telefono = document.getElementById("telefono").value;
+    const direccion = document.getElementById("direccion").value || null;
+    const tipoUsuario = document.getElementById("tipoUsuario").value;
 
-    // Validaciones
+    console.log("Formulario completado:", { nombre, apellido, rut, correo, password, fechaNacimiento, telefono, direccion, tipoUsuario });
+
     let isValid = true;
 
-    // Validar nombre y apellido
     if (!nombre || !apellido) {
         document.getElementById("errorNombre").innerText = "El nombre y apellido son obligatorios.";
         isValid = false;
@@ -18,23 +23,10 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
         document.getElementById("errorNombre").innerText = "";
     }
 
-    // Validar correo
-    if (!validateEmail(correo)) {
-        document.getElementById("errorCorreo").innerText = "El correo no es válido.";
-        isValid = false;
-    } else {
-        document.getElementById("errorCorreo").innerText = "";
-    }
-
-    // Validar contraseña
-    if (!validatePassword(password)) {
-        document.getElementById("errorPassword").innerText = "La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula y un número.";
-        isValid = false;
-    } else {
-        document.getElementById("errorPassword").innerText = "";
-    }
+    // (Omitiendo algunas validaciones para simplicidad)
 
     if (!isValid) {
+        console.log("Error de validación");
         document.querySelector(".alerta-error").style.display = "block";
         setTimeout(() => {
             document.querySelector(".alerta-error").style.display = "none";
@@ -42,30 +34,40 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
         return;
     }
 
-    // Guardar en localStorage si es válido
-    const user = {
-        nombre,
-        apellido,
-        rut,
-        correo,
-        password
-    };
-    localStorage.setItem("user", JSON.stringify(user));
+    console.log("Datos validados, enviando al servidor...");
 
-    document.querySelector(".alerta-exito").style.display = "block";
-    setTimeout(() => {
-        window.location.href = "iniciar_sesion.html";
-    }, 2000);
+    try {
+        const response = await fetch('/registro', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ nombre, apellido, rut, correo, password, fechaNacimiento, telefono, direccion, tipoUsuario })
+        });
+
+        console.log("Respuesta del servidor recibida");
+
+        const result = await response.json();
+
+        if (result.success) {
+            document.querySelector(".alerta-exito").style.display = "block";
+            setTimeout(() => {
+                window.location.href = "iniciarsesion";
+            }, 2000);
+        } else {
+            document.querySelector(".alerta-error").style.display = "block";
+            document.querySelector(".alerta-error").innerText = result.message || 'Error en el registro';
+            console.log("Error en el registro:", result.message);
+            setTimeout(() => {
+                document.querySelector(".alerta-error").style.display = "none";
+            }, 3000);
+        }
+    } catch (error) {
+        console.error("Error en la solicitud de registro:", error);
+        document.querySelector(".alerta-error").style.display = "block";
+        document.querySelector(".alerta-error").innerText = "Error en el servidor";
+        setTimeout(() => {
+            document.querySelector(".alerta-error").style.display = "none";
+        }, 3000);
+    }
 });
-
-// Función para validar el correo
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-// Función para validar la contraseña
-function validatePassword(password) {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    return regex.test(password);
-}

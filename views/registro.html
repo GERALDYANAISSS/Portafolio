@@ -39,7 +39,7 @@
             <div class="info-childs">
                 <h4><p>Bienvenido a fonoaudiologia voces en crecimiento</p></h4>
                 <p>Inicia sesión para accedera tu plan personalizados</p>
-                <input type="button" value="Iniciar Sesión" id="sign-in" onclick="location.href='iniciarsesion.html';">
+                <input type="button" value="Iniciar Sesión" id="sign-in" onclick="location.href='iniciarsesion';">
             </div>
         </div>
         <div class="form-information">
@@ -71,6 +71,48 @@
                         </label>
                         <div id="errorCorreo" class="error-message"></div>
                     </div>
+                    <div>
+                        <label><i class='bx bx-lock-alt'></i>
+                            <input type="password" placeholder="Contraseña" name="password" id="password" required>
+                        </label>
+                        <div id="errorPassword" class="error-message"></div>
+                    </div>
+                    <div>
+                        <label><i class='bx bx-lock-alt'></i>
+                            <input type="password" placeholder="Confirmar Contraseña" name="confirmPassword" id="confirmPassword" required>
+                        </label>
+                        <div id="errorConfirmPassword" class="error-message"></div>
+                    </div>
+                    <div>
+                        <label><i class='bx bx-calendar'></i>
+                            <input type="date" placeholder="Fecha de Nacimiento" name="fechaNacimiento" id="fechaNacimiento" required>
+                        </label>
+                        <div id="errorFechaNacimiento" class="error-message"></div>
+                    </div>
+                    <div>
+                        <label><i class='bx bx-phone'></i>
+                            <input type="tel" placeholder="Teléfono" name="telefono" id="telefono" required>
+                        </label>
+                        <div id="errorTelefono" class="error-message"></div>
+                    </div>
+                    <div>
+                        <label><i class='bx bx-home'></i>
+                            <input type="text" placeholder="Dirección" name="direccion" id="direccion">
+                        </label>
+                        <div id="errorDireccion" class="error-message"></div>
+                    </div>
+
+                    <div>
+                        <label><i class='bx bx-user-circle'></i>
+                            <select name="tipoUsuario" id="tipoUsuario" required>
+                                <option value="" disabled selected>Selecciona el tipo de usuario</option>
+                                <option value="padre">Padre</option>
+                                <option value="fonoaudiologa">Fonoaudióloga</option>
+                            </select>
+                        </label>
+                        <div id="errorTipoUsuario" class="error-message"></div>
+                    </div>
+                    
                     <input type="submit" value="Registrarse">
                     <div class="alerta-error">Todos los campos son obligatorios</div>
                     <div class="alerta-exito">Te registraste correctamente</div>

@@ -46,25 +46,25 @@
             <div class="form-information-childs">
                 <p>Inicia sesión para accedera tu plan personalizados</p>
                 <br>
-                <form class="form form-register" id="registerForm" novalidate>
+                <form class="form form-register" id="loginForm" method="POST" novalidate>
                     <div>
                         <label>
                             <i class='bx bx-envelope'></i>
-                            <input type="email" placeholder="Correo Electronico" name="userEmail" id="userEmail" required>
+                            <input type="email" placeholder="Correo Electrónico" name="email" id="email" required>
                         </label>
                     </div>
                     <div>
                         <label>
                             <i class='bx bx-lock-alt'></i>
-                            <input type="password" placeholder="Contraseña" name="userPassword" id="userPassword" required>
+                            <input type="password" placeholder="Contraseña" name="password" id="password" required>
                         </label>
                     </div>
                     <input type="submit" value="Iniciar sesión">
-                    <input type="button" value="solitar cuenta" id="sign-in" onclick="location.href='registro.html';"> 
+                    <input type="button" value="Solicitar cuenta" id="sign-in" onclick="location.href='registro';">
                     <div class="alerta-error">Todos los campos son obligatorios</div>
                     <div class="alerta-error">Contraseña incorrecta</div>
                     <div class="alerta-exito">Sesión iniciada correctamente</div>
-                </form>
+                </form>                               
             </div>
         </div>
     </div>
@@ -79,67 +79,7 @@
         </div>
     </footer>
 
-    <!--<script>
-        const form = document.getElementById('registerForm');
-        const inputs = form.querySelectorAll('input[required]');
-        const errorAlert = document.querySelector('.alerta-error');
-        const successAlert = document.querySelector('.alerta-exito');
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form submission for validation
-
-            let valid = true;
-
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.classList.add('error');
-                    valid = false;
-                } else {
-                    input.classList.remove('error');
-                }
-            });
-
-            if (valid) {
-                errorAlert.style.display = 'none';
-                successAlert.style.display = 'block';
-                form.reset(); // Reset form fields after successful validation
-            } else {
-                successAlert.style.display = 'none';
-                errorAlert.style.display = 'block';
-            }
-        });
-    </script>-->
-    <script>
-        const form = document.getElementById('registerForm');
-        const inputs = form.querySelectorAll('input[required]');
-        const errorAlert = document.querySelector('.alerta-error');
-        const successAlert = document.querySelector('.alerta-exito');
+    <script src="/js/inciarsesion.js"></script>
     
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita el envío del formulario para validación
-    
-            let valid = true;
-    
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.classList.add('error');
-                    valid = false;
-                } else {
-                    input.classList.remove('error');
-                }
-            });
-    
-            if (valid) {
-                errorAlert.style.display = 'none';
-                successAlert.style.display = 'block';
-    
-                // Redirige a la página de destino después de iniciar sesión
-                window.location.href = 'perfil_paciente.html';
-            } else {
-                successAlert.style.display = 'none';
-                errorAlert.style.display = 'block';
-            }
-        });
-    </script>
 </body>
 </html>
