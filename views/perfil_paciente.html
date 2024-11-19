@@ -6,7 +6,7 @@
     <title>Perfil del Paciente - Fonoaudiología</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/perfil_paciente.css">
-    <script src="/js/perfil_paciente.js" defer></script>
+    <script src="/js/perfil_paciente.js"></script>
 </head>
 <body>
 
@@ -24,14 +24,14 @@
             <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
             <li><a href="/chat"><i class="fas fa-sign-out-alt"></i> Atención chat</a></li>
             <li><a href="/cargas"><i class="fas fa-sign-out-alt"></i> Gestion de cargas</a></li>
-            <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            <li><a href="/home" id="logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
     </aside>
 
     <div class="profile-container">
         <div class="profile-header">
             <label for="profile-upload">
-                <img id="profile-picture" src="profile-placeholder.png" alt="Imagen de perfil">
+                <img id="profile-picture" src="/assets/logo.png" alt="Imagen de perfil">
             </label>
             <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
             <button class="change-photo" onclick="document.getElementById('profile-upload').click()">Cambiar Foto</button>
@@ -52,10 +52,6 @@
                 <div class="form-field">
                     <label for="guardian-email">Correo electrónico</label>
                     <input type="text" id="guardian-correo" placeholder="Correo del cuidador">
-                </div>
-                <div class="form-field">
-                    <label for="guardian-profession">Profesión:</label>
-                    <input type="text" id="guardian-profession" placeholder="Profesión del cuidador">
                 </div>
                 <div class="form-field">
                     <label for="guardian-phone">Número de Teléfono:</label>
