@@ -1,13 +1,9 @@
 document.getElementById("loginForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Evita el envío tradicional del formulario
+    console.log("Interceptando el envío del formulario...");
 
-    // Captura los valores de los campos de entrada
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-
-    // Oculta los mensajes antes de cada intento de inicio de sesión
-    document.querySelector(".alerta-error").style.display = "none";
-    document.querySelector(".alerta-exito").style.display = "none";
 
     try {
         const response = await fetch('/iniciarsesion', {
@@ -19,21 +15,21 @@ document.getElementById("loginForm").addEventListener("submit", async function (
         });
 
         const result = await response.json();
-
-        // Verifica el resultado de la respuesta
         if (result.success) {
-            document.querySelector(".alerta-exito").style.display = "block";
-            document.querySelector(".alerta-exito").innerText = "Sesión iniciada correctamente";
-            setTimeout(() => {
-                window.location.href = "/home"; // Redirige a la página principal o de perfil
-            }, 2000);
+            localStorage.setItem('user', JSON.stringify(result.data.user));
+            alert("Inicio de sesión exitoso");
+            // Redirigir según el tipo de usuario
+            if (result.data.user.tipo_usuario === 'fonoaudiologa') {
+                window.location.href = "/perfil_fono";
+            } else if (result.data.user.tipo_usuario === 'padre') {
+                window.location.href = "/perfil_paciente";
+            }
         } else {
-            document.querySelector(".alerta-error").style.display = "block";
-            document.querySelector(".alerta-error").innerText = result.message || "Inicio de sesión fallido";
+            console.error("Error en el inicio de sesión:", result.message);
+            alert("Error: " + result.message);
         }
     } catch (error) {
         console.error("Error en el servidor:", error);
-        document.querySelector(".alerta-error").style.display = "block";
-        document.querySelector(".alerta-error").innerText = "Error en el servidor";
+        alert("Error en el servidor. Inténtalo de nuevo.");
     }
 });

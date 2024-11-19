@@ -9,7 +9,7 @@
 /* Fondo con patrón de íconos repetitivos */
 body {
     background-color: #f0f4f8;
-    background-image: url('../Assest/Imagen de WhatsApp 2024-11-12 a las 19.01.34_59f4acd0.jpg'); /* Ajusta la ruta */
+    background-image: url('../Assets/Imagen de WhatsApp 2024-11-12 a las 19.01.34_59f4acd0.jpg'); /* Ajusta la ruta */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

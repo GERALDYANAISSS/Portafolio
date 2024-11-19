@@ -18,10 +18,10 @@
         </div>
         
         <ul class="menu-list">
-            <li><a href="/perfil_fono.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
-            <li><a href="/f_fono.html"><i class="fas fa-user"></i> Edicion de fonoaudiologia</a></li>
-            <li><a href="/planificacion.html"><i class="fas fa-calendar-alt"></i> Planificación</a></li>
-            <li><a href="/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            <li><a href="/perfil_fono"><i class="fas fa-user"></i> Mi Perfil</a></li>
+            <li><a href="/f_fono"><i class="fas fa-user"></i> Edicion de fonoaudiologia</a></li>
+            <li><a href="/planificacion"><i class="fas fa-calendar-alt"></i> Planificación</a></li>
+            <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
     </aside> 
 
@@ -44,33 +44,23 @@
             <!-- Datos personales -->
             <div class="personal-info">
                 <h2>Datos Personales</h2>
-                <p><strong>Nombre Completo:</strong> Maria Fernanda Lorca Ordenes</p>
-                <p><strong>RUT:</strong> 20.435.589-4</p>
-                <p><strong>Teléfono:</strong> +56 9 35978917</p>
-                <p><strong>Correo Personal:</strong> mf.lorcaordenes@gmail.com</p>
-                <p><strong>Correo Profesional:</strong> fonoaudiologia.fl@gmail.com</p>
-                <p><strong>Dirección:</strong> Beduinos 1324, Maipú, Santiago</p>
-                <p><strong>Rol:</strong> Directora y fundadora</p>
+                <p><strong>Nombre Completo:</strong> <span id="user-nombre"></span></p>
+                <p><strong>RUT:</strong> <span id="user-rut"></span></p>
+                <p><strong>Teléfono:</strong> <span id="user-telefono"></span></p>
+                <p><strong>Correo Profesional:</strong> <span id="user-correo"></span></p>
+                <p><strong>Dirección:</strong> <span id="user-direccion"></span></p>
             </div>
 
             <!-- Información académica y profesional -->
             <div class="professional-info">
                 <h2>Información Profesional</h2>
-                <p><strong>Universidad:</strong> Universidad de las Américas</p>
-                <p><strong>Carrera:</strong> Fonoaudiología</p>
-                <p><strong>Especialización:</strong> Trastornos del lenguaje, Trastorno del espectro autista (TEA)</p>
-
-                <h3>Establecimientos de Práctica</h3>
-                <ul>
-                    <li>Hospital General</li>
-                    <li>Clínica de Rehabilitación del Lenguaje</li>
-                    <li>Centro de Atención Temprana</li>
-                </ul>
-
-                <!-- Botón de la agenda -->
-                <button class="calendar-btn" onclick="openGoogleCalendar()">Abrir mi agenda</button>
+                <p><strong>Universidad:</strong> <span id="user-universidad"></span></p>
+                <p><strong>Carrera:</strong> <span id="user-carrera"></span></p>
+                <p><strong>Especialización:</strong> <span id="user-especializacion"></span></p>
             </div>
         </div>
+        <!-- Botón de la agenda -->
+        <button class="calendar-btn" onclick="openGoogleCalendar()">Abrir mi agenda</button>
     </div>
 
     <script src="/js/perfil_fono.js"></script> 
