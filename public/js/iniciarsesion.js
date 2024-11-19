@@ -1,6 +1,5 @@
 document.getElementById("loginForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Evita el envío tradicional del formulario
-    console.log("Interceptando el envío del formulario...");
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -14,10 +13,19 @@ document.getElementById("loginForm").addEventListener("submit", async function (
             body: JSON.stringify({ email, password })
         });
 
+        if (!response.ok) {
+            // Manejar errores HTTP
+            console.error("Error HTTP:", response.status);
+            alert("Error: No se pudo iniciar sesión. Código: " + response.status);
+            return;
+        }
+
         const result = await response.json();
+
         if (result.success) {
             localStorage.setItem('user', JSON.stringify(result.data.user));
             alert("Inicio de sesión exitoso");
+
             // Redirigir según el tipo de usuario
             if (result.data.user.tipo_usuario === 'fonoaudiologa') {
                 window.location.href = "/perfil_fono";
