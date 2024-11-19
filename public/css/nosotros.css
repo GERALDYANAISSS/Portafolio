@@ -35,14 +35,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
 }
 
 .logo img {
-    height: 30px;
-    margin-right: 550px;
+    height: 60px;
+    margin-right: 20px;
 }
 
 .navbar ul {
@@ -62,31 +60,38 @@ header {
     color: #FF69B4;
 }
 
-/* Menú hamburguesa */
-.menu-toggle {
+/* Icono de hamburguesa (visible solo en dispositivos pequeños) */
+.hamburger {
     display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
 }
 
-@media (max-width: 992px) {
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-    }
+/* Menú para dispositivos pequeños */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
 
-    .navbar {
-        display: none;
-    }
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .navbar-mobile {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
+.nav-links li {
+    text-align: center;
+    padding: 10px 0;
 }
 
 /* Encabezado de texto */
@@ -108,12 +113,20 @@ header {
     margin-top: 10px;
 }
 
+.container-menu {
+    display: flex;
+    justify-content: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 20px;
+}
+
 /* Contenedor de perfiles */
 .container {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: auto;
     padding: 20px;
 }
 
@@ -179,7 +192,7 @@ h2 {
 }
 
 .view-profile:hover {
-    background-color: #e49ace;
+    background-color: #992da39f;
 }
 
 /* Sección "Sobre Nosotros" */
@@ -234,34 +247,39 @@ footer {
     color: #333;
 }
 
-/* Responsive Design */
+/* Ajustes responsive para dispositivos medianos y pequeños */
 @media (max-width: 768px) {
-    .container, .benefit-item {
+    .hamburger {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        width: 100%;
+        padding: 10px 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .about-section, .header-text h1, .view-profile {
-        font-size: 14px;
+    .navbar ul.active {
+        display: flex;
     }
 
-    .header-text h1 {
-        font-size: 24px;
+    .navbar ul li {
+        padding: 10px 0;
+    }
+
+    .benefit-item {
+        flex: 1 1 calc(50% - 20px);
     }
 }
 
-@media (max-width: 576px) {
-    .header-text h1 {
-        font-size: 20px;
-    }
-
-    .header-text p,
-    .about-section p,
-    .view-profile {
-        font-size: 14px;
-    }
-
-    .profile-pic {
-        width: 120px;
-        height: 120px;
+@media (max-width: 480px) {
+    .benefit-item {
+        flex: 1 1 100%;
     }
 }

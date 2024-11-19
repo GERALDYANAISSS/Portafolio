@@ -6,13 +6,21 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #f0f2f5;
+    background-image: url('../img/fondoblanco4.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    padding-top: 80px; /* Espacio para el header */
 }
 
 /* Header */
@@ -30,9 +38,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
 }
 
 .logo img {
@@ -104,6 +110,14 @@ header {
     position: absolute;
     left: 0;
     color: #FF69B4;
+}
+
+.container-menu {
+    display: flex;
+    justify-content: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 20px;
 }
 
 /* Ajustes del contenido principal */

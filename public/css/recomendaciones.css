@@ -47,7 +47,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
 }
 
@@ -73,9 +72,16 @@ header {
     color: #FF69B4;
 }
 
-/* Menú hamburguesa en dispositivos medianos y pequeños */
-.menu-toggle {
-/* Icono de hamburguesa (oculto en dispositivos grandes) */
+.container-menu {
+    display: flex;
+    justify-content: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 20px;
+}
+
+/* Icono de hamburguesa (visible solo en dispositivos pequeños) */
+.hamburger {
     display: none;
     font-size: 24px;
     background: none;
@@ -84,16 +90,28 @@ header {
     color: #333;
 }
 
-.navbar-mobile {
-    display: none;
+/* Menú para dispositivos pequeños */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #fff;
     position: absolute;
     top: 60px;
-    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
     width: 100%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li {
+    text-align: center;
+    padding: 10px 0;
 }
 
 /* Sección "Quiénes Somos" */
@@ -189,10 +207,12 @@ footer {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px 0;
     text-align: center;
-    color: #333333;
+    color: #333;
     width: 100%;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .footer-container {
@@ -204,17 +224,24 @@ footer {
 }
 
 .footer-container p {
+    margin-bottom: 10px;
     font-size: 16px;
     color: #333;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .navbar {
+    .navbar ul {
         display: none;
     }
-    .menu-toggle {
+    .hamburger {
         display: block;
+    }
+    .nav-links {
+        display: none;
+    }
+    .nav-links.active {
+        display: flex;
     }
 }
 

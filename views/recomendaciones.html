@@ -6,57 +6,50 @@
     <link rel="stylesheet" href="/css/recomendaciones.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>fonoaudiologia - Home</title>
+    <title>fonoaudiologia - Recomendaciones</title>
 </head>
 <body>
+    <!-- Encabezado -->
     <header>
-        <div class="menu">
-            <a href="home.html" class="logo">
-                <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red PsicoVínculo">
-            </a>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/recomendaciones">Recomendaciones</a></li>
-                    <li><a href="/nosotros">Nosotros</a></li>
-                    <li><a href="/contactanos">Contacto</a></li>
-                    <li><a href="/iniciarsesion">Inicia Sesión</a></li>
-                </ul>
-            </nav>
-            <!-- Botón de menú hamburguesa -->
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+        <div class="content">
+            <div class="menu container-menu">
+                <a href="/home" class="logo">
+                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red fonoaudiologo">
+                </a>
+                <!-- Icono de hamburguesa para dispositivos pequeños -->
+                <button class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/recomendaciones">Recomendaciones</a></li>
+                        <li><a href="/nosotros">Nosotros</a></li>
+                        <li><a href="/contactanos">Contacto</a></li>
+                        <li><a href="/iniciarsesion">Inicia Sesión</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <!-- Menú hamburguesa para móviles -->
-        <nav class="navbar-mobile" id="mobileMenu">
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/recomendaciones">Recomendaciones</a></li>
-                <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="/contactanos">Contacto</a></li>
-                <li><a href="/iniciarsesion">Inicia Sesión</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Contenido Principal -->
     <div class="main-content">
         <!-- Sección "Quiénes Somos" -->
         <section class="about-us">
-            <h1>¿Que es la estimulacion temprana?</h1>
-            <p>es un conjunto de actividades y estrategias que se emplean para apoyar el desarrollo de habilidades en niños desde su nacimiento hasta los seis años de edad, una etapa en la que su cerebro es muy receptivo y adaptable. El objetivo es potenciar al máximo sus capacidades motoras, cognitivas, sociales y emocionales en un ambiente seguro y positivo.</p>
-            <p>Través de ejercicios de juego, contacto y comunicación, ayudamos a que el niño alcance sus hitos de desarrollo, como gatear, hablar, reconocer emociones, entre otros. Cada actividad se adapta a su edad y a su ritmo de aprendizaje, porque cada niño es único</p>
+            <h1>¿Qué es la estimulación temprana?</h1>
+            <p>Es un conjunto de actividades y estrategias que se emplean para apoyar el desarrollo de habilidades en niños desde su nacimiento hasta los seis años de edad, una etapa en la que su cerebro es muy receptivo y adaptable.</p>
+            <p>A través de ejercicios de juego, contacto y comunicación, ayudamos a que el niño alcance sus hitos de desarrollo, como gatear, hablar, reconocer emociones, entre otros. Cada actividad se adapta a su edad y a su ritmo de aprendizaje, porque cada niño es único.</p>
         </section>
 
-        <center><h2>Estimulacion en casa</h2></center>
+        <center><h2>Estimulación en casa</h2></center>
 
         <!-- Sección de Tarjetas -->
         <section class="tarjetas-container">
             <div class="tarjeta">
                 <img src="/assets/imitacion.jpg" alt="¿Qué hacemos?" class="tarjeta-img">
                 <div class="tarjeta-content">
-                    <h3>Imitaciones de sonidos y Palabras</h3>
+                    <h3>Imitaciones de sonidos y palabras</h3>
                     <p>Juega con tu hijo a imitar sonidos de animales o de objetos cotidianos, como "miau" (gato), "muu" (vaca). Esto ayuda a que el niño se acostumbre a usar sonidos para comunicarse.</p>
                 </div>
             </div>
@@ -82,17 +75,21 @@
         </section>
     </div>
 
+
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2024. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- JavaScript para el menú hamburguesa -->
     <script>
         function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
         }
     </script>
+    <script src="/js/home.js"></script>
 </body>
 </html>

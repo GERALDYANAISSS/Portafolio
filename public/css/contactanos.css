@@ -31,9 +31,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
 }
 
 .logo img {
@@ -41,6 +39,15 @@ header {
     margin-right: 20px;
 }
 
+.container-menu {
+    display: flex;
+    justify-content: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 20px;
+}
+
+/* Navegación principal */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -56,6 +63,39 @@ header {
 
 .navbar ul li a:hover {
     color: #FF69B4;
+}
+
+/* Estilos del Menú Hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li {
+    text-align: center;
+    padding: 10px 0;
 }
 
 /* Contenedor principal */
@@ -76,7 +116,7 @@ header {
         padding-top: 80px;
         padding-bottom: 60px;
     }
-    
+
     .contact-container {
         margin-top: 10px;
         margin-bottom: 10px;
@@ -132,9 +172,14 @@ header {
 }
 
 .info-block i {
-    font-size: 40px;
-    color: #008000;
+    font-size: 100px; /* Tamaño del ícono */
+    color: #992da39f; /* Azul oscuro */
     margin-bottom: 15px;
+    border: 3px solid #992da39f; /* Contorno */
+    padding: 20px; /* Espacio interno para simular un sobre */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco */
+    box-sizing: content-box; /* Incluye el padding y el borde en el cálculo del tamaño */
 }
 
 .info-block h2 {
@@ -178,7 +223,23 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
     .contact-info {
         flex-direction: column;
     }

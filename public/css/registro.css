@@ -32,9 +32,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
 }
 
 .logo img {
@@ -42,6 +40,7 @@ header {
     margin-right: 20px;
 }
 
+/* Navegación */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -57,6 +56,47 @@ header {
 
 .navbar ul li a:hover {
     color: #FF69B4;
+}
+
+/* Menú hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container-menu {
+    display: flex;
+    justify-content: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 20px;
 }
 
 /* Container form */
@@ -78,7 +118,7 @@ header {
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: #c7eef3;
+    background-color: #992da39f;
     padding: 30px;
 }
 
@@ -161,7 +201,7 @@ header {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
-    background-color: #c7eef3;
+    background-color: #992da39f;
     color: #333;
     cursor: pointer;
     transition: all .3s ease;
@@ -183,43 +223,43 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 1000;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    gap: 10px;
 }
 
 .footer-container p {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #555;
-}
-
-.social-media {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+    color: #333;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding-top: 80px; /* Espacio para el header en pantallas pequeñas */
-        padding-bottom: 60px; /* Espacio para el footer en pantallas pequeñas */
+@media (max-width: 1024px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .container-form {
-        margin-top: 10px; /* Reduce margen superior en pantallas pequeñas */
-        margin-bottom: 10px; /* Reduce margen inferior en pantallas pequeñas */
+        margin-top: 10px;
+        margin-bottom: 10px;
         flex-direction: column;
         height: auto;
     }
