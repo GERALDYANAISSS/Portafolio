@@ -32,7 +32,7 @@ body {
     left: 0;
     width: 250px;
     height: 100%;
-    background-color: #5f36da;
+    background-color: #992da39f;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     padding-top: 50px;
@@ -89,7 +89,7 @@ body {
 
 .menu-list li a:hover,
 .menu-list li a.active {
-    background-color: #f0ecee2b;
+    background-color: #992da39f;
     color: #fff;
 }
 
@@ -98,7 +98,7 @@ body {
     padding: 15px 30px;
     font-size: 1.2rem;
     color: white;
-    background-color: #00796b;
+    background-color:#992da39f;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -107,7 +107,7 @@ body {
 }
 
 .change-photo:hover, .save-button:hover {
-    background-color: #005f57;
+    background-color: #992da356;
 }
 
 /* Contenedor de perfil */

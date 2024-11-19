@@ -39,7 +39,7 @@ h1, h2 {
   left: 0;
   width: 250px;
   height: 100%;
-  background-color: #5f36da;
+  background-color: #992da39f;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   padding-top: 50px;
@@ -60,7 +60,7 @@ h1, h2 {
   height: 80px;
   border-radius: 50%;
   margin-bottom: 10px;
-  border: 2px solid #bc69ff;
+  border: 2px solid #992da39f;
 }
 
 .logo-section p {
@@ -144,7 +144,7 @@ input, textarea {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #996ad1;
+  background-color: #992da39f;
   color: white;
   border: none;
   border-radius: 8px;
