@@ -1,144 +1,193 @@
-let editIndex = -1; // Variable para rastrear el índice del plan que se está editando
+document.addEventListener("DOMContentLoaded", () => {
+    cargarTutores();
+    cargarPlanesGuardados();
+});
 
-window.onload = function() {
-    mostrarPlanes();
-};
+// Cargar los tutores desde Supabase
+async function cargarTutores() {
+    try {
+        const response = await fetch('/tutores');
+        const tutores = await response.json();
 
-// Función para guardar el plan en localStorage
-function guardarPlan() {
-    const plan = {
-        diagnostico: document.getElementById("diagnostico").value,
-        objetivos: document.getElementById("objetivos").value,
-        nombrePaciente: document.getElementById("nombrePaciente").value,
-        edadPaciente: document.getElementById("edadPaciente").value,
-        nombreTutor: document.getElementById("nombreTutor").value,
-        rut: document.getElementById("rut").value,
-        telefono: document.getElementById("telefono").value,
-        ocupacion: document.getElementById("ocupacion").value,
-        descripcionPlan: document.getElementById("descripcionPlan").value,
-        observaciones: document.getElementById("observaciones").value
-    };
+        const selectTutor = document.getElementById('nombreTutor');
+        selectTutor.innerHTML = '<option value="">Seleccione un tutor</option>'; // Limpiar y agregar opción por defecto
 
-    let planes = JSON.parse(localStorage.getItem("planes")) || [];
+        tutores.forEach(tutor => {
+            const option = document.createElement('option');
+            option.value = tutor.usuario_id; // Asegurar que el value es el ID del tutor
+            option.textContent = tutor.nombre; // El texto visible será el nombre del tutor
+            selectTutor.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Error al cargar tutores:", error);
+    }
+}
 
-    if (editIndex === -1) {
-        // Si no se está editando, agregar un nuevo plan
-        planes.push(plan);
-    } else {
-        // Si se está editando, actualizar el plan existente
-        planes[editIndex] = plan;
-        editIndex = -1; // Reiniciar el índice de edición
+// Cargar los pacientes asociados al tutor seleccionado
+async function cargarPacientes() {
+    const tutorId = document.getElementById('nombreTutor').value;
+
+    if (!tutorId) {
+        document.getElementById('rut').value = '';
+        document.getElementById('telefono').value = '';
+        return;
     }
 
-    localStorage.setItem("planes", JSON.stringify(planes));
-    mostrarPlanes();
-    document.getElementById("planForm").reset();
+    try {
+        // Obtener datos del tutor
+        const responseTutor = await fetch(`/tutor/${tutorId}`);
+        const tutor = await responseTutor.json();
+        document.getElementById('rut').value = tutor.rut;
+        document.getElementById('telefono').value = tutor.telefono;
+
+        // Obtener pacientes asociados al tutor
+        const responsePacientes = await fetch(`/pacientes/${tutorId}`);
+        const pacientes = await responsePacientes.json();
+
+        const selectPaciente = document.getElementById('nombrePaciente');
+        selectPaciente.innerHTML = '<option value="">Seleccione un paciente</option>';
+        pacientes.forEach(paciente => {
+            const option = document.createElement('option');
+            option.value = paciente.id;
+            option.textContent = paciente.nombre;
+            selectPaciente.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Error al cargar pacientes:", error);
+    }
 }
 
-// Función para mostrar los planes guardados
-function mostrarPlanes() {
-    const planes = JSON.parse(localStorage.getItem("planes")) || [];
-    const planesList = document.getElementById("planesList");
-    planesList.innerHTML = "";
+// Cargar datos del paciente seleccionado
+async function cargarDatosPaciente() {
+    const pacienteId = document.getElementById('nombrePaciente').value;
 
-    planes.forEach((plan, index) => {
-        const listItem = document.createElement("li");
-        listItem.classList.add("plan-item");
+    if (!pacienteId) {
+        document.getElementById('edadPaciente').value = '';
+        return;
+    }
 
-        // Título que alterna la visibilidad del contenido
-        const planHeader = document.createElement("div");
-        planHeader.classList.add("plan-header");
-        planHeader.textContent = `Plan de ${plan.nombrePaciente}`;
-        planHeader.onclick = () => {
-            const content = listItem.querySelector(".plan-content");
-            content.style.display = content.style.display === "none" ? "block" : "none";
-        };
-
-        // Contenido detallado, inicialmente oculto
-        const planContent = document.createElement("div");
-        planContent.classList.add("plan-content");
-        planContent.style.display = "none";
-        planContent.innerHTML = `
-            <div class="plan-info">
-                <strong>Diagnóstico médico:</strong> ${plan.diagnostico} <br>
-                <strong>Objetivos:</strong> ${plan.objetivos} <br><br>
-                <strong>Datos del Paciente</strong><br>
-                <strong>Nombre:</strong> ${plan.nombrePaciente} <br>
-                <strong>Edad:</strong> ${plan.edadPaciente} <br><br>
-                <strong>Datos del Padre o Tutor</strong><br>
-                <strong>Nombre y Apellido:</strong> ${plan.nombreTutor} <br>
-                <strong>RUT:</strong> ${plan.rut} <br>
-                <strong>Teléfono:</strong> ${plan.telefono} <br>
-                <strong>Ocupación:</strong> ${plan.ocupacion} <br><br>
-                <strong>Descripción del Plan:</strong> ${plan.descripcionPlan} <br>
-                <strong>Observaciones:</strong> ${plan.observaciones} <br>
-            </div>
-            <div class="buttons">
-                <button onclick="editarPlan(${index})">Editar</button>
-                <button onclick="descargarPlan(${index})">Descargar</button>
-                <button onclick="eliminarPlan(${index})">Eliminar</button>
-            </div>
-        `;
-
-        listItem.appendChild(planHeader);
-        listItem.appendChild(planContent);
-        planesList.appendChild(listItem);
-    });
+    try {
+        const response = await fetch(`/paciente/${pacienteId}`);
+        const paciente = await response.json();
+        document.getElementById('edadPaciente').value = paciente.edad;
+    } catch (error) {
+        console.error("Error al cargar datos del paciente:", error);
+    }
 }
 
-// Función para cargar los datos de un plan en el formulario para editar
-function editarPlan(index) {
-    const planes = JSON.parse(localStorage.getItem("planes"));
-    const plan = planes[index];
+// Guardar el plan
+async function guardarPlan() {
+        // Obtener el ID del usuario logueado desde el localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        const fonoaudiologaId = user?.id; 
+    const plan = {
+        tutorId: document.getElementById('nombreTutor').value,
+        pacienteId: document.getElementById('nombrePaciente').value,
+        diagnostico: document.getElementById('diagnostico').value.trim(),
+        objetivos: document.getElementById('objetivos').value.trim(),
+        descripcionPlan: document.getElementById('descripcionPlan').value.trim(),
+        observaciones: document.getElementById('observaciones').value.trim(),
+        fonoaudiologa_id: fonoaudiologaId,
+    };
 
-    document.getElementById("diagnostico").value = plan.diagnostico;
-    document.getElementById("objetivos").value = plan.objetivos;
-    document.getElementById("nombrePaciente").value = plan.nombrePaciente;
-    document.getElementById("edadPaciente").value = plan.edadPaciente;
-    document.getElementById("nombreTutor").value = plan.nombreTutor;
-    document.getElementById("rut").value = plan.rut;
-    document.getElementById("telefono").value = plan.telefono;
-    document.getElementById("ocupacion").value = plan.ocupacion;
-    document.getElementById("descripcionPlan").value = plan.descripcionPlan;
-    document.getElementById("observaciones").value = plan.observaciones;
+    if (!plan.tutorId || !plan.pacienteId) {
+        alert("Seleccione un tutor y un paciente.");
+        return;
+    }
 
-    editIndex = index; // Establecer el índice del plan que se está editando
+    try {
+        const response = await fetch('/planificaciones', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(plan)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert("Plan guardado exitosamente.");
+            window.location.reload();
+        } else {
+            alert("Error al guardar el plan: " + result.message);
+        }
+    } catch (error) {
+        console.error("Error al guardar el plan:", error);
+    }
 }
 
-// Función para descargar el plan en PDF
-function descargarPlan(index) {
-    const planes = JSON.parse(localStorage.getItem("planes"));
-    const plan = planes[index];
 
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+async function cargarPlanesGuardados() {
+    const user = JSON.parse(localStorage.getItem("user"));
 
-    doc.setFontSize(12);
-    doc.text("Plan de Tratamiento", 10, 10);
-    doc.text(`Diagnóstico médico: ${plan.diagnostico}`, 10, 20);
-    doc.text(`Objetivos: ${plan.objetivos}`, 10, 30);
-    doc.text("Datos del Paciente", 10, 40);
-    doc.text(`Nombre: ${plan.nombrePaciente}`, 10, 50);
-    doc.text(`Edad: ${plan.edadPaciente}`, 10, 60);
-    doc.text("Datos del Padre o Tutor", 10, 70);
-    doc.text(`Nombre y Apellido: ${plan.nombreTutor}`, 10, 80);
-    doc.text(`RUT: ${plan.rut}`, 10, 90);
-    doc.text(`Teléfono: ${plan.telefono}`, 10, 100);
-    doc.text(`Ocupación: ${plan.ocupacion}`, 10, 110);
-    doc.text("Descripción del Plan", 10, 120);
-    doc.text(plan.descripcionPlan, 10, 130, { maxWidth: 180 });
-    doc.text("Observaciones", 10, 140);
-    doc.text(plan.observaciones, 10, 150, { maxWidth: 180 });
+    if (!user || user.tipo_usuario !== "fonoaudiologa") {
+        alert("No se encontró un usuario activo o no tiene permisos para ver los planes.");
+        return;
+    }
 
-    doc.save(`Plan_${plan.nombrePaciente}.pdf`);
+    const fonoaudiologaId = user.id;
+
+    try {
+        const response = await fetch(`/planes?fonoaudiologaId=${fonoaudiologaId}`);
+        const planes = await response.json();
+
+        const planesContainer = document.getElementById("planesContainer");
+        planesContainer.innerHTML = "";
+
+        if (!Array.isArray(planes) || planes.length === 0) {
+            planesContainer.innerHTML = "<p>No hay planes guardados.</p>";
+            return;
+        }
+
+        planes.forEach(plan => {
+            const card = document.createElement("div");
+            card.className = "card";
+
+            card.innerHTML = `
+                <h3>${plan.paciente?.nombre || "Paciente sin Nombre"}</h3>
+                <p><strong>Tutor:</strong> ${plan.usuarios?.nombre || "Tutor sin Nombre"}</p>
+                <p><strong>Diagnóstico:</strong> ${plan.diagnostico || "Sin Diagnóstico"}</p>
+                <p><strong>Objetivos:</strong> ${plan.objetivos || "Sin Objetivos"}</p>
+                <p><strong>Descripción:</strong> ${plan.descripcion || "Sin Descripción"}</p>
+                <div class="actions">
+                    <button onclick="descargarPlan(${plan.plan_id})">Descargar Plan</button>
+                    <button onclick="eliminarPlan(${plan.plan_id})" class="delete-button">Eliminar</button>
+                </div>
+            `;
+
+            planesContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.error("Error al cargar los planes:", error);
+        document.getElementById("planesContainer").innerHTML = "<p>Error al cargar los planes.</p>";
+    }
 }
 
-// Función para eliminar un plan con confirmación
-function eliminarPlan(index) {
-    if (confirm("¿Estás seguro de que deseas eliminar este plan?")) {
-        let planes = JSON.parse(localStorage.getItem("planes"));
-        planes.splice(index, 1);
-        localStorage.setItem("planes", JSON.stringify(planes));
-        mostrarPlanes();
+// Función para descargar el PDF del plan
+function descargarPlan(planId) {
+    const url = `/planes/${planId}/pdf`;
+    window.open(url, '_blank'); // Abre el PDF en una nueva pestaña o descarga directamente
+}
+
+
+// Función para eliminar un plan
+async function eliminarPlan(planId) {
+    if (!confirm("¿Estás seguro de que deseas eliminar este plan?")) return;
+
+    try {
+        const response = await fetch(`/planes/${planId}`, {
+            method: 'DELETE',
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert("Plan eliminado exitosamente.");
+            window.location.reload(); // Recargar la página para actualizar la lista
+        } else {
+            alert(`Error al eliminar el plan: ${result.message}`);
+        }
+    } catch (error) {
+        console.error("Error al eliminar el plan:", error);
+        alert("Error al eliminar el plan. Inténtelo nuevamente.");
     }
 }

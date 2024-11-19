@@ -18,10 +18,10 @@
             <p>Mi Perfil</p>
         </div>
         <ul class="menu-list">
-            <li><a href="/perfil_fono.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
-            <li><a href="/f_fono.html"><i class="fas fa-user"></i> Edicion de fonoaudiologia</a></li>
-            <li><a href="/planificacion.html"><i class="fas fa-calendar-alt"></i> Planificación</a></li>
-            <li><a href="/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            <li><a href="/perfil_fono"><i class="fas fa-user"></i> Mi Perfil</a></li>
+            <li><a href="/f_fono"><i class="fas fa-user"></i> Edicion de fonoaudiologia</a></li>
+            <li><a href="/planificacion"><i class="fas fa-calendar-alt"></i> Planificación</a></li>
+            <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
     </aside>
 </div>
 
@@ -29,38 +29,48 @@
     <div class="form-section">
       <h1>Formulario de Plan de Trabajo</h1>
       <form id="planForm">
+        <label for="nombreTutor">Nombre del Tutor:</label>
+        <select id="nombreTutor" onchange="cargarPacientes()" required>
+            <option value="">Seleccione un tutor</option>
+        </select>
+        
+        <label for="rut">RUT del Tutor:</label>
+        <input type="text" id="rut" placeholder="RUT" disabled>
+        
+        <label for="telefono">Teléfono del Tutor:</label>
+        <input type="text" id="telefono" placeholder="Teléfono" disabled>
+        
+        <label for="nombrePaciente">Nombre del Paciente:</label>
+        <select id="nombrePaciente" onchange="cargarDatosPaciente()" required>
+            <option value="">Seleccione un paciente</option>
+        </select>
+        
+        <label for="edadPaciente">Edad del Paciente:</label>
+        <input type="number" id="edadPaciente" placeholder="Edad" disabled>
+        
         <label>Diagnóstico médico:</label>
         <textarea id="diagnostico" placeholder="Diagnóstico médico"></textarea>
-
+        
         <label>Objetivos:</label>
         <textarea id="objetivos" placeholder="Objetivos"></textarea>
-
-        <label>Datos del Paciente</label>
-        <input type="text" id="nombrePaciente" placeholder="Nombre">
-        <input type="number" id="edadPaciente" placeholder="Edad">
-
-        <label>Datos del Padre o Tutor</label>
-        <input type="text" id="nombreTutor" placeholder="Nombre y Apellido">
-        <input type="text" id="rut" placeholder="RUT">
-        <input type="text" id="telefono" placeholder="Teléfono">
-        <input type="text" id="ocupacion" placeholder="Ocupación">
-
+        
         <label>Descripción del Plan:</label>
         <textarea id="descripcionPlan" placeholder="Descripción del Plan"></textarea>
-
+        
         <label>Observaciones:</label>
         <textarea id="observaciones" placeholder="Observaciones"></textarea>
-
-        <button type="button" onclick="guardarPlan()">Guardar Plan</button>
+        
+        <button type="button" onclick="guardarPlan()">Guardar Plan</button>    
       </form>
       <p class="firma">Firma de la Fonoaudióloga<br>Fernanda Lorca Órdenes - Fonoaudióloga</p>
     </div>
 
     <div class="saved-plans">
       <h2>Planes Guardados</h2>
-      <ul id="planesList"></ul>
-    </div>
+      <div id="planesContainer" class="cards-container"></div>
+  </div>  
   </div>
   <script src="/js/planificacion.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
 </html>

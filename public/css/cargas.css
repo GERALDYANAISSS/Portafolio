@@ -1,0 +1,133 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Menú lateral */
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    z-index: 1001;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #992da39f;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+#menu-toggle:checked + .menu-icon + .sidebar {
+    transform: translateX(0);
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #bc69ff;
+}
+
+.logo-section p {
+    color: #e0e0e0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.menu-list li {
+    margin: 15px 0;
+}
+
+.menu-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.menu-list li a i {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.menu-list li a:hover,
+.menu-list li a.active {
+    background-color: #992da39f;
+    color: #fff;
+}
+
+.main-container {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.patients-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.patients-table th,
+.patients-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.add-button-container {
+    text-align: center;
+}
+
+.add-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
