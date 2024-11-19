@@ -3,70 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil paciente</title>
+    <title>Perfil del Paciente - Fonoaudiología</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/f_paci.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="/js/f_paci.js"></script>
 </head>
 <body>
+
     <!-- Menú lateral con hamburguesa -->
     <input type="checkbox" id="menu-toggle" style="display: none;">
     <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
     <aside class="sidebar">
         <div class="logo-section">
-            <img src="/assets/logo.png" alt="Foto de perfil" class="sidebar-profile-img">
-            <p class="sidebar-profile-name">Mi Perfil</p>
+            <img src="/assets/logo.png" alt="Foto de perfil">
+            <p class="profile-name">Mi Perfil</p>
         </div>
-        
         <ul class="menu-list">
-            <li><a href="/perfil_paciente.html"><i class="fas fa-user"></i> Mi Perfil</a></li>
-            <li><a href="/agenda.html"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
-            <li><a href="/informativo.html"><i class="fas fa-user-friends"></i> Informativo</a></li>
-            <li><a href="/chat.html"><i class="fas fa-sign-out-alt"></i> Atencion chat</a></li>
-            <li><a href="/home.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            <li><a href="/perfil_paciente"><i class="fas fa-user"></i> Mi Perfil</a></li>
+            <li><a href="/agenda"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
+            <li><a href="/chat"><i class="fas fa-sign-out-alt"></i> Atención chat</a></li>
+            <li><a href="/cargas"><i class="fas fa-sign-out-alt"></i> Gestion de cargas</a></li>
+            <li><a href="/home" id="logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
-    </aside> 
+    </aside>
 
-    <!-- Contenedor principal de perfil -->
-    <div class="profile-card">
-        <!-- Logo superior -->
-        <div class="header">
-            <img src="/assets/logo.png" alt="Logo de la Fonoaudióloga" class="logo">
+    <div class="profile-container">
+        <div class="profile-header">
+            <label for="profile-upload">
+                <img id="profile-picture" src="/assets/logo.png" alt="Imagen de perfil">
+            </label>
+            <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
+            <button class="change-photo" onclick="document.getElementById('profile-upload').click()">Cambiar Foto</button>
         </div>
-        
-        <!-- Foto de perfil y botón de cambio -->
-        <div class="profile-photo-container">
-            <input type="file" id="profilePhotoInput" style="display: none;" onchange="changeProfilePhoto(event)">
-            <img src="default-profile.jpg" alt="Foto de Perfil" id="profilePhoto" class="profile-photo">
-            <button class="change-photo-btn" onclick="document.getElementById('profilePhotoInput').click()">Cambiar Foto</button>
-        </div>
-        
-        <!-- Información personal y profesional -->
-        <div class="profile-details">
-            <!-- Datos personales tutor o cuidador -->
-            <div class="personal-info">
-                <h2>Datos Personales tutor o cuidador</h2>
-                <p><strong>Nombre Completo:</strong> Anais Geraldy Lagos Suarez</p>
-                <p><strong>Rut</strong> 20.435.589-4</p>
-                <p><strong>Correo electronico</strong> Geraldylagos@gmail.com</p>
-                <p><strong>profesion</strong> ninguna</p>
-                <p><strong>Numero de telefono</strong> 9 88998889</p>
-                <p><strong>Correo electronico</strong> Geraldylagos@gmail.com</p>
-                <p><strong>Direccion</strong> puente alto , 2209</p>
-                
+
+        <div class="profile-sections">
+            <!-- Información del Padre o Cuidador -->
+            <div class="profile-section">
+                <h3>Datos del Padre o Cuidador</h3>
+                <div class="form-field">
+                    <label for="guardian-name">Nombre Completo:</label>
+                    <input type="text" id="guardian-name" placeholder="Nombre completo del cuidador">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-rut">RUT:</label>
+                    <input type="text" id="guardian-rut" placeholder="RUT del cuidador">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-email">Correo electrónico</label>
+                    <input type="text" id="guardian-correo" placeholder="Correo del cuidador">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-phone">Número de Teléfono:</label>
+                    <input type="tel" id="guardian-phone" placeholder="+56 9 1234 5678">
+                </div>
+                <div class="form-field">
+                    <label for="guardian-address">Dirección:</label>
+                    <input type="text" id="guardian-address" placeholder="Ej: Puente Alto 2203">
+                </div>
             </div>
-
-            <!-- Información personal del paciente -->
-            <div class="professional-info">
-                <h2>Información Personal del paciente</h2>
-                <p><strong>Nombre Completo:</strong> Anais Geraldy Lagos Suarez</p>
-                <p><strong>Edad</strong>5</p>
-                <p><strong>Nivel educacional:</strong> 2 basico</p>
-                <p><strong>Rut:</strong>20.435.589-2 </p>
-                <p><strong>Fecha de nacimiento</strong> 22.05.2020</p>
-                
         </div>
-    </div>
 
-    <script src="/js/f_paci.js"></script> 
+                        <!-- Texto de instrucciones centrado y separado de los cuadros -->
+                <div class="instructions">
+                    <p>
+                        Antes de agendar una cita con la fonoaudióloga, por favor asegúrese de actualizar los datos del paciente y del tutor.
+                        Esta información es fundamental para una atención adecuada y personalizada, y permitirá a la fonoaudióloga conocer el contexto
+                        y las necesidades del paciente.
+                    </p>
+                </div>
+
+        <!-- Botón Guardar cambios alineado a la derecha -->
+        <div class="save-button-container-right">
+            <button class="save-button" onclick="saveChanges()">Guardar cambios</button>
+        </div>    
+
 </body>
 </html>
