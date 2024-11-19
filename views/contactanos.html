@@ -8,20 +8,22 @@
     <!-- Google Fonts for better typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for modern icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <!-- Encabezado -->
     <header>
         <div class="content">
-            <div class="menu container">
-                <a href="/home.html" class="logo">
-                    <label for="menu">
-                        <img src="/assets/logo.png" class="menu-icono" height="60">
-                    </label>
+            <div class="menu container-menu">
+                <a href="/home" class="logo">
+                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red fonoaudiologo">
                 </a>
+                <!-- Icono de hamburguesa para dispositivos pequeños -->
+                <button class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav class="navbar">
-                    <ul>
+                    <ul class="nav-links">
                         <li><a href="/home">Home</a></li>
                         <li><a href="/recomendaciones">Recomendaciones</a></li>
                         <li><a href="/nosotros">Nosotros</a></li>
@@ -32,7 +34,6 @@
             </div>
         </div>
     </header>
-<body>
 
     <div class="contact-container">
         <section class="contact-header">
@@ -63,14 +64,19 @@
             Si la situación no es urgente, utiliza otros canales o agenda una cita en nuestro sistema.</p>
         </section>
     </div>
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <p>&copy; 2024. Todos los derechos reservados.</p>
         </div>
     </footer>
-    
 
-    <script src="#"></script>
-
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

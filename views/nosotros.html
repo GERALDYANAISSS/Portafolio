@@ -13,17 +13,19 @@
     <title>Equipo Psicólogos</title>
 </head>
 <body>
-    <header class="header-container">
-        <!-- Encabezado -->
+    <!-- Encabezado -->
+    <header>
         <div class="content">
-            <div class="menu container">
-                <a href="index.html" class="logo">
-                    <label for="menu">
-                        <img src="/assets/logo.png" class="menu-icono" height="60">
-                    </label>
+            <div class="menu container-menu">
+                <a href="/home" class="logo">
+                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red fonoaudiologo">
                 </a>
+                <!-- Icono de hamburguesa para dispositivos pequeños -->
+                <button class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav class="navbar">
-                    <ul>
+                    <ul class="nav-links">
                         <li><a href="/home">Home</a></li>
                         <li><a href="/recomendaciones">Recomendaciones</a></li>
                         <li><a href="/nosotros">Nosotros</a></li>
@@ -35,7 +37,6 @@
         </div>
     </header>
 
-    
         <div class="header-text">
             <h1>¡Nuestra Fonoaudióloga!</h1>
             <p>Conoce a nuestra especialista en fonoaudiología infantil y juvenil, comprometida con el desarrollo y bienestar de cada uno de nuestros usuarios. Su enfoque integral </p> 
@@ -57,12 +58,12 @@
                     <p class="description">
                         Hola, soy María Fernanda Lorca, fonoaudióloga especializada en el desarrollo del lenguaje y la comunicación en niños y adolescentes. Mi enfoque profesional se centra en ayudar a cada niño a superar las barreras que limitan su capacidad de expresión y comprensión, brindando un espacio de acompañamiento y aprendizaje adaptado a sus necesidades específicas. Cuento con amplia experiencia en el tratamiento de infantes con trastorno del espectro autista (TEA) y trastornos del lenguaje...
                     </p>
-                    <center><a href="/maria.html" class="view-profile">+ Ver perfil completo</a></center>
+                    <center><a href="/maria" class="view-profile">Perfil completo</a></center>
                 </div>
             </div>
         </div>
     </div> <!-- Cierre del contenedor principal -->
-
+</main>
     <section class="about-section">
         <h2>Nuestro proyecto</h2>
         <p>Esta página ha sido creada para brindar información clara y accesible sobre los servicios de fonoaudiología y facilitar el contacto con familias que buscan orientación y apoyo profesional en el desarrollo comunicativo de sus hijos. Mi misión es acompañar a cada niño en su camino hacia una comunicación más segura y efectiva, fortaleciendo las bases de su desarrollo social y emocional.</p>
@@ -71,8 +72,14 @@
     <footer>
         <div class="footer-container">
             <p>&copy; 2024. Todos los derechos reservados.</p>
-            </div>
         </div>
     </footer>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

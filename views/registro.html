@@ -15,15 +15,19 @@
     <title>Formulario de Registro</title>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Encabezado -->
     <header>
         <div class="content">
-            <div class="menu container">
-                <a href="index.html" class="logo">
-                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red PsicoVínculo">
+            <div class="menu container-menu">
+                <a href="/home" class="logo">
+                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red fonoaudiologo">
                 </a>
+                <!-- Icono de hamburguesa para dispositivos pequeños -->
+                <button class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav class="navbar">
-                    <ul>
+                    <ul class="nav-links">
                         <li><a href="/home">Home</a></li>
                         <li><a href="/recomendaciones">Recomendaciones</a></li>
                         <li><a href="/nosotros">Nosotros</a></li>
@@ -34,6 +38,7 @@
             </div>
         </div>
     </header>
+
     <div class="container-form register">
         <div class="information">
             <div class="info-childs">
@@ -121,13 +126,23 @@
         </div>
     </div>
     </main>
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024. Todos los derechos reservados.</p>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <p>&copy; 2024. Todos los derechos reservados.</p>
+                <div class="social-media">
+    
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
     <script src="/js/registro.js"></script>
 </body>
 </html>

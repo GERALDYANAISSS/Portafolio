@@ -14,15 +14,19 @@
     <title>INICIO SESIÓN</title>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Encabezado -->
     <header>
         <div class="content">
-            <div class="menu container">
-                <a href="../Pages/home.html" class="logo">
-                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red PsicoVínculo">
+            <div class="menu container-menu">
+                <a href="/home" class="logo">
+                    <img src="/assets/logo.png" class="menu-icono" height="60" alt="Logo Red fonoaudiologo">
                 </a>
+                <!-- Icono de hamburguesa para dispositivos pequeños -->
+                <button class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <nav class="navbar">
-                    <ul>
+                    <ul class="nav-links">
                         <li><a href="/home">Home</a></li>
                         <li><a href="/recomendaciones">Recomendaciones</a></li>
                         <li><a href="/nosotros">Nosotros</a></li>
@@ -73,13 +77,16 @@
     <footer>
         <div class="footer-container">
             <p>&copy; 2024. Todos los derechos reservados.</p>
-            <div class="social-media">
-
-            </div>
         </div>
     </footer>
 
-    <script src="/js/inciarsesion.js"></script>
-    
+    <!-- JavaScript para el menú hamburguesa -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    <script src="/js/iniciarsesion.js"></script>
 </body>
 </html>

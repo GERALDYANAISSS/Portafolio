@@ -34,9 +34,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
 }
 
 .navbar ul {
@@ -119,6 +117,14 @@ header {
     color: #333;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.container-menu {
+    display: flex;
+    justify-content: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 20px;
 }
 
 /* Organiza los elementos de la lista en 4 columnas para mayor expansión */
