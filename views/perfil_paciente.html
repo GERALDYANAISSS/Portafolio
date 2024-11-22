@@ -20,40 +20,37 @@
         <ul class="menu-list">
             <li><a href="/perfil_paciente"><i class="fas fa-user"></i> Mi Perfil</a></li>
             <li><a href="/agenda"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/f_paci"><i class="fas fa-edit"></i> Editar perfil</a></li>
             <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
-            <li><a href="/chat"><i class="fas fa-sign-out-alt"></i> Atencion chat</a></li>
-            <li><a href="/cargas"><i class="fas fa-sign-out-alt"></i> Gestion de cargas</a></li>
+            <li><a href="/chat"><i class="fas fa-comments"></i> Atencion chat</a></li>
+            <li><a href="/cargas"><i class="fas fa-folder-open"></i> Gestion de cargas</a></li>
             <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
     </aside> 
 
-    <!-- Contenedor principal de perfil -->
-    <div class="profile-card">
-        <!-- Logo superior -->
-        <div class="header">
-            <img src="/assets/logo.png" alt="Logo de la Fonoaudióloga" class="logo">
-        </div>
-        
-        <!-- Foto de perfil y botón de cambio -->
-        <div class="profile-photo-container">
-            <input type="file" id="profilePhotoInput" style="display: none;" onchange="changeProfilePhoto(event)">
-            <img src="/assets/carrusel.jpg" alt="Foto de Perfil" id="profilePhoto" class="profile-photo">
-            <button class="change-photo-btn" onclick="document.getElementById('profilePhotoInput').click()">Cambiar Foto</button>
-        </div>
-        
-        <!-- Información personal y profesional -->
-        <div class="profile-details">
-            <!-- Datos personales tutor o cuidador -->
-            <div class="personal-info">
-                <h2>Datos Personales tutor o cuidador</h2>
-                <p><strong>Nombre Completo:</strong> <span id="user-nombre"></span></p>
-                <p><strong>RUT:</strong> <span id="user-rut"></span></p>
-                <p><strong>Teléfono:</strong> <span id="user-telefono"></span></p>
-                <p><strong>Correo Profesional:</strong> <span id="user-correo"></span></p>
-                <p><strong>Dirección:</strong> <span id="user-direccion"></span></p>   
+    <div class="profile-container">
+        <div class="profile-content">
+            <!-- Imagen de perfil y botón -->
+            <div class="profile-image-section">
+                <label for="profile-upload">
+                    <img id="profile-picture" src="profile-placeholder.png" alt="Imagen de perfil">
+                </label>
+                <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImagePaciente(event)">
+            </div>
+    
+            <!-- Información personal -->
+            <div class="profile-details-section">
+                <h2>Datos Personales Tutor o Cuidador</h2>
+                <div class="details">
+                    <p><strong>Nombre Completo:</strong> Luis Ledezma</p>
+                    <p><strong>RUT:</strong> 262434397</p>
+                    <p><strong>Teléfono:</strong> 989603742</p>
+                    <p><strong>Correo Profesional:</strong> lav1308.ll@gmail.com</p>
+                    <p><strong>Dirección:</strong> Av Siempre Viva</p>
+                </div>
             </div>
         </div>
-    </div>
+    </div>    
 
     <script src="/js/perfil_paciente.js"></script> 
 </body>

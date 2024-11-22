@@ -3,23 +3,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', 'Arial', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background-color: #f7f9fc;
+  background-color: #f0f4f8;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  color: #333;
-  padding: 20px;
+  padding: 20px; /* Añadido padding para evitar que quede pegado */
 }
 
-h1, h2 {
-  color: #333;
-  margin-bottom: 10px;
+#menu-toggle {
+  display: none;
 }
 
 /* Menú lateral */
@@ -103,28 +100,36 @@ h1, h2 {
 /* Contenedor principal */
 .container {
   display: flex;
-  gap: 60px;
-  max-width: 1200px;
+  gap: 40px; /* Espaciado entre las tarjetas */
+  width: 100%; /* Las tarjetas ocuparán el 100% del ancho */
+  max-width: 1200px; /* Limitar el ancho máximo para pantallas grandes */
   margin: 0 auto;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas pequeñas */
+  justify-content: space-between; /* Espaciado uniforme */
 }
 
-.form-section,
-.saved-plans {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
+/* Sección del formulario */
 .form-section {
-  max-width: 700px;
+  background-color: #ffffff;
+  padding: 40px; /* Mayor padding interno */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Se adapta al tamaño del contenedor */
+  min-width: 500px; /* Ancho mínimo */
+  max-width: 700px; /* Ancho máximo */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.saved-plans {
-  max-width: 400px;
-  background-color: #f5f9ff;
-  color: #333;
+.form-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.form-section h2 {
+  font-size: 1.8rem; /* Títulos más grandes */
+  margin-bottom: 20px;
+  color: #992da39f;
+  font-weight: bold;
 }
 
 label {
@@ -133,17 +138,25 @@ label {
   display: block;
 }
 
-input, textarea {
+input, textarea, select {
   width: 100%;
-  padding: 10px;
+  padding: 14px; /* Mayor espacio interno */
   margin-top: 5px;
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  background-color: #f9f9fb;
+  font-size: 14px; /* Texto adaptable */
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #992da39f;
+  outline: none;
 }
 
 button {
   width: 100%;
-  padding: 10px;
+  padding: 14px;
   background-color: #992da39f;
   color: white;
   border: none;
@@ -151,10 +164,13 @@ button {
   cursor: pointer;
   margin-top: 20px;
   font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background-color: #8656b0;
+  background-color: #992da39f;
+  transform: translateY(-2px);
 }
 
 .firma {
@@ -164,10 +180,29 @@ button:hover {
   margin-top: 20px;
 }
 
+/* Sección de planes guardados */
+.saved-plans {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Se adapta al tamaño del contenedor */
+  min-width: 500px; /* Ancho mínimo */
+  max-width: 700px; /* Ancho máximo */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.saved-plans:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
 .saved-plans h2 {
-  font-size: 1.5em;
-  text-align: center;
+  font-size: 1.8rem;
   margin-bottom: 20px;
+  color: #992da39f;
+  font-weight: bold;
+  text-align: center;
 }
 
 .saved-plans ul {
@@ -176,115 +211,127 @@ button:hover {
 }
 
 .saved-plans li {
-  background-color: #d4e4ff;
-  padding: 10px;
+  background-color: #f5f9ff;
+  padding: 20px;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 0.85em;
+  font-size: 1rem;
   color: #333;
   cursor: pointer;
-  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .saved-plans li:hover {
-  background-color: #c0d8ff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.saved-plans li.expanded {
-  background-color: rgba(212, 228, 255, 0.7);
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px; /* Reduce el espacio entre las tarjetas */
+    padding: 10px; /* Ajusta el padding para evitar bordes pegados */
+  }
+
+  .form-section, .saved-plans {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: none; /* Elimina límites de ancho para pantallas pequeñas */
+    margin: 0; /* Elimina márgenes laterales */
+    padding: 20px; /* Mantiene un padding cómodo */
+    box-shadow: none; /* Simplifica el diseño en pantallas pequeñas */
+  }
+
+  .form-section h2, .saved-plans h2 {
+    font-size: 1.5rem; /* Ajusta el tamaño del título */
+    text-align: center; /* Centra el título */
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-size: 14px; /* Reduce el tamaño del texto */
+  }
+
+  input, textarea, select {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    padding: 10px; /* Reduce el padding para ahorrar espacio */
+    margin-bottom: 15px; /* Agrega espacio entre los campos */
+  }
+
+  button {
+    font-size: 14px;
+    padding: 12px;
+    margin-top: 15px;
+  }
 }
 
-.plan-header {
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column; /* Asegura que las tarjetas se apilen verticalmente */
+    gap: 15px; /* Reduce el espacio entre secciones */
+    padding: 10px; /* Reduce el padding interno */
+  }
+
+  .form-section, .saved-plans {
+    width: 100%; /* Asegura que ocupen todo el ancho disponible */
+    max-width: 100%; /* Elimina límites de ancho */
+    margin: 0 auto; /* Centra las secciones */
+    padding: 15px; /* Reduce el padding interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombras ligeras para mantener el diseño limpio */
+    border-radius: 10px; /* Suaviza las esquinas */
+  }
+
+  .form-section h2, .saved-plans h2 {
+    font-size: 1.2rem; /* Ajusta el tamaño del título */
+    text-align: center; /* Centra los títulos */
+    margin-bottom: 10px; /* Reduce el espacio inferior */
+  }
+
+  label {
+    font-size: 14px; /* Mantiene el texto legible en campos */
+  }
+
+  input, textarea, select {
+    font-size: 14px; /* Ajusta el tamaño del texto para teléfonos */
+    padding: 10px; /* Reduce el padding interno */
+    margin-bottom: 10px; /* Añade espacio entre campos */
+    border-radius: 5px; /* Ajusta el redondeo para campos */
+  }
+
+  button {
+    font-size: 14px; /* Ajusta el texto de los botones */
+    padding: 10px; /* Reduce el padding */
+    border-radius: 5px; /* Ajusta el diseño de los botones */
+    margin-top: 10px; /* Espaciado superior más reducido */
+  }
+
+  .firma {
+    font-size: 0.8rem; /* Reduce el tamaño del texto para pantallas pequeñas */
+    text-align: center; /* Centra el texto */
+    margin-top: 10px; /* Reduce el margen superior */
+  }
+
+  /* Ajuste de la lista de planes guardados */
+  .saved-plans ul {
+    padding: 0;
+  }
+
+  .saved-plans li {
+    padding: 15px; /* Más compacto */
+    margin-bottom: 10px; /* Menor espacio entre elementos */
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+
+  .saved-plans .buttons {
+    flex-direction: column; /* Botones apilados verticalmente */
+    gap: 10px; /* Espaciado entre botones */
+  }
+
+  .saved-plans .buttons button {
+    width: 100%; /* Botones ocupan todo el ancho disponible */
+    font-size: 14px; /* Texto claro y legible */
+    padding: 10px; /* Espaciado interno reducido */
+  }
 }
 
-.plan-header::after {
-  content: "▼";
-  font-size: 0.9em;
-  margin-left: 10px;
-  transition: transform 0.3s;
-}
-
-.saved-plans li.expanded .plan-header::after {
-  transform: rotate(180deg);
-}
-
-.plan-content {
-  margin-top: 8px;
-  font-size: 0.9em;
-  color: #555;
-  display: none;
-}
-
-.saved-plans .buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.saved-plans .buttons button {
-  width: 48%;
-  padding: 8px;
-  font-size: 0.9em;
-  background-color: #996ad1;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.saved-plans .buttons button:hover {
-  background-color: #8656b0;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-}
-
-.card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.card p {
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #555;
-}
-
-.card .actions {
-  margin-top: 15px;
-  text-align: right;
-}
-
-.card .actions button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.card .actions button:hover {
-  background-color: #0056b3;
-}

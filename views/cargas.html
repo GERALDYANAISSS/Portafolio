@@ -20,9 +20,10 @@
         <ul class="menu-list">
             <li><a href="/perfil_paciente"><i class="fas fa-user"></i> Mi Perfil</a></li>
             <li><a href="/agenda"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/f_paci"><i class="fas fa-edit"></i> Editar perfil</a></li>
             <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
-            <li><a href="/cargas"><i class="fas fa-sign-out-alt"></i> Gestion de cargas</a></li>
-            <li><a href="/chat"><i class="fas fa-sign-out-alt"></i> Atención chat</a></li>
+            <li><a href="/chat"><i class="fas fa-comments"></i> Atención chat</a></li>
+            <li><a href="/cargas"><i class="fas fa-folder-open"></i> Gestion de cargas</a></li>
             <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
     </aside>
@@ -47,11 +48,12 @@
             </tbody>
         </table>
 
-        <!-- Botón para agregar un nuevo paciente -->
-        <div class="add-button-container">
-            <button id="add-patient-btn" class="add-button">Agregar Nueva Carga</button>
-        </div>
+    <!-- Contenedor para los botones dentro de la tarjeta -->
+    <div class="button-container-inside">
+        <button id="add-patient-btn" class="add-button">Agregar nueva carga</button>
+        <button id="delete-patient-btn" class="delete-button">Eliminar</button>
     </div>
+</div>
 
 </body>
 </html>

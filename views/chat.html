@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat de Atención</title>
     <link rel="stylesheet" href="css/chat.css">
-    <script src="/js/chat.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -18,30 +17,36 @@
             <p class="profile-name">Mi Perfil</p>
         </div>
         <ul class="menu-list">
-            <ul class="menu-list">
-                <li><a href="/perfil_paciente"><i class="fas fa-user"></i> Mi Perfil</a></li>
-                <li><a href="/agenda"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
-                <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
-                <li id="gestionCargas" style="display: none;">
-                    <a href="/cargas"><i class="fas fa-sign-out-alt"></i> Gestión de cargas</a>
-                </li>
-                <li><a href="/chat"><i class="fas fa-sign-out-alt"></i> Atencion chat</a></li>
-                <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+            <li><a href="/perfil_paciente"><i class="fas fa-user"></i> Mi Perfil</a></li>
+            <li><a href="/agenda"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/f_paci"><i class="fas fa-edit"></i> Editar perfil</a></li>
+            <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
+            <li><a href="/chat"><i class="fas fa-comments"></i> Atencion chat</a></li>
+            <li><a href="/cargas"><i class="fas fa-folder-open"></i> Gestion de cargas</a></li>
+            <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
     </aside>
 
-    <!-- Fondo de íconos repetitivos -->
-    <div class="background-pattern">
-        <!-- Contenedor principal para el mensaje y el QR -->
-        <div class="qr-container">
-            <p class="attention-hours">
-                <strong>Horario de atención</strong><br>
-                Lunes a viernes: 10:00 a 18:00<br>
-                Sábados: 10:30 a 14:30
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        <!-- Información de la fonoaudióloga -->
+        <div class="fono-container">
+            <img src="/assets/pesca.jpg" alt="Foto de la fonoaudióloga" class="fono-img">
+            <h2 class="fono-name">Dra. Fonoaudióloga</h2>
+            <p class="fono-description">
+                Esta pestaña está diseñada para facilitar la comunicación directa con la fonoaudióloga a través de WhatsApp. Utilice este medio durante los horarios establecidos para consultas rápidas y atención personalizada.
             </p>
-            <a href="https://w.app/Gs7FH3" target="_blank">
-                <img src="/assets/Qr.jpg" alt="Código QR para WhatsApp" class="qr-code">
-            </a>
+        </div>
+
+        <!-- Información del QR -->
+        <div class="qr-container">
+            <h3>Horario de Atención</h3>
+            <p class="attention-hours">
+                <i class="fas fa-clock"></i> Lunes a viernes: 10:00 a 18:00<br>
+                <i class="fas fa-clock"></i> Sábados: 10:30 a 14:30
+            </p>
+            <img src="/assets/Qr.jpg" alt="Código QR para WhatsApp" class="qr-code">
+            <button class="whatsapp-button">Contactar por WhatsApp</button>
             <p class="disclaimer">
                 Recuerde usar este medio de comunicación con responsabilidad dentro del horario establecido.
             </p>

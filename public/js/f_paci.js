@@ -57,3 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("No se encontraron datos del usuario en el localStorage.");
     }
 });
+
+// Función para mostrar una vista previa de la imagen seleccionada en el perfil del paciente
+function previewImagePaciente(event) {
+    const profilePicture = document.getElementById('profile-picture');
+    const file = event.target.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            profilePicture.src = e.target.result;
+            localStorage.setItem("profileImagePaciente", e.target.result); // Guarda la imagen del paciente en localStorage
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+// Cargar la imagen de perfil del paciente desde el localStorage al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+    const savedImagePaciente = localStorage.getItem("profileImagePaciente");
+    if (savedImagePaciente) {
+        document.getElementById("profile-picture").src = savedImagePaciente;
+    }
+});

@@ -97,7 +97,7 @@ body {
 /* Contenedor principal de perfil */
 .profile-card {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1200px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -107,24 +107,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
 }
 
-/* Encabezado con logo y foto de perfil */
+/* Encabezado con logo y foto de perfil en línea */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 0 20px;
-    margin-bottom: 20px;
 }
 
 .logo {
-    width: 200px;
+    width: 220px;
 }
 
 .profile-photo-container {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,91 +135,98 @@ body {
     border-radius: 50%;
     border: 3px solid #ddd;
     object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .change-photo-btn {
     margin-top: 10px;
     background-color: #3498db;
     color: white;
-    padding: 8px 16px;
+    padding: 12px 22px;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px; /* Tamaño de texto más grande */
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .change-photo-btn:hover {
     background-color: #2980b9;
 }
 
-/* Información personal y profesional */
+/* Información personal y profesional en columnas */
 .profile-details {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     gap: 20px;
+    width: 100%;
     margin-top: 20px;
 }
 
 .personal-info, .professional-info {
-    width: 48%;
+    flex: 1;
     min-width: 280px;
-    text-align: left;
     background-color: #f8f9fa;
-    padding: 20px;
+    padding: 24px; /* Espaciado más amplio */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personal-info:hover, .professional-info:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .personal-info h2, .professional-info h2 {
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1.8rem; /* Aumentar tamaño del encabezado */
     margin-bottom: 15px;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 8px;
+    color: #333;
 }
 
-.personal-info p, .professional-info p, .professional-info ul {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-.professional-info ul {
-    padding-left: 20px;
-    list-style-type: disc;
+.personal-info p, .professional-info p {
+    font-size: 1.2rem; /* Texto más grande */
+    color: #444;
+    line-height: 1.8; /* Mejorar espaciado entre líneas */
+    margin-bottom: 10px;
 }
 
 /* Botón del calendario */
 .calendar-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 12px 30px;
+    display: inline-block;
+    padding: 14px 50px; /* Más ancho y alto */
     background-color: #27ae60;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem; /* Texto del botón más grande */
+    font-weight: bold;
+    text-transform: uppercase;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Botón más redondeado */
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.2);
+    margin-top: 20px;
 }
 
 .calendar-btn:hover {
     background-color: #219150;
+    box-shadow: 0 6px 12px rgba(39, 174, 96, 0.4);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .profile-details {
         flex-direction: column;
     }
 
     .personal-info, .professional-info {
         width: 100%;
-    }
-
-    .header {
-        flex-direction: column;
     }
 }
 
@@ -231,11 +237,12 @@ body {
     }
 
     .change-photo-btn {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 8px 16px;
+        font-size: 14px;
     }
 
-    .logo {
-        width: 150px;
+    .calendar-btn {
+        font-size: 1rem;
+        padding: 10px 30px;
     }
 }

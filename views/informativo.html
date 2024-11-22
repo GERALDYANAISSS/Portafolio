@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Menú lateral con hamburguesa -->
-    <input type="checkbox" id="menu-toggle">
+    <input type="checkbox" id="menu-toggle" style="display: none;">
     <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
     <aside class="sidebar">
         <div class="logo-section">
@@ -19,10 +19,11 @@
         <ul class="menu-list">
             <li><a href="/perfil_paciente"><i class="fas fa-user"></i> Mi Perfil</a></li>
             <li><a href="/agenda"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/f_paci"><i class="fas fa-edit"></i> Editar perfil</a></li>
             <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
-            <li><a href="/chat"><i class="fas fa-sign-out-alt"></i> Atencion chat</a></li>
+            <li><a href="/chat"><i class="fas fa-comments"></i> Atencion chat</a></li>
             <li id="gestionCargas" style="display: none;">
-                <a href="/cargas"><i class="fas fa-sign-out-alt"></i> Gestión de cargas</a>
+                <a href="/cargas"><i class="fas fa-folder-open"></i> Gestión de cargas</a>
             </li>
             <li><a href="/home"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>

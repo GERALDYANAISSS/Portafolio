@@ -107,6 +107,40 @@ body {
     padding: 20px 40px;
     margin-top: 20px;
     border: 1px solid #e0e0e0;
+    position: relative;
+}
+
+/* Botón de retroceso */
+.back-button-container {
+    position: absolute;
+    top: 15px; /* Espacio adicional para colocarlo dentro de la tarjeta */
+    left: 15px; /* Espacio desde la izquierda */
+    z-index: 1002;
+}
+
+.back-button {
+    background-color:#992da39f;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 50%;
+    width: 45px; /* Tamaño del botón */
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #992da399;
+    transform: scale(1.1);
+}
+
+.back-button i {
+    font-size: 20px; /* Tamaño del ícono */
 }
 
 /* Ajustes para contenedor de imagen, botón y texto */
@@ -137,7 +171,7 @@ body {
 }
 
 .change-photo:hover {
-    background-color: #A569FF;
+    background-color: #992da399;
 }
 
 /* Instrucciones centradas */
@@ -214,7 +248,7 @@ body {
 }
 
 .save-button:hover {
-    background-color: #A569FF;
+    background-color:#992da399;
 }
 
 /* Responsive Design */

@@ -21,9 +21,10 @@
         <ul class="menu-list">
             <li><a href="/perfil_paciente"><i class="fas fa-user"></i> Mi Perfil</a></li>
             <li><a href="/agenda"><i class="fas fa-calendar-alt"></i> Agenda</a></li>
+            <li><a href="/f_paci"><i class="fas fa-edit"></i> Editar perfil</a></li>
             <li><a href="/informativo"><i class="fas fa-user-friends"></i> Informativo</a></li>
-            <li><a href="/chat"><i class="fas fa-sign-out-alt"></i> Atención chat</a></li>
-            <li><a href="/cargas"><i class="fas fa-sign-out-alt"></i> Gestion de cargas</a></li>
+            <li><a href="/chat"><i class="fas fa-comments"></i> Atención chat</a></li>
+            <li><a href="/cargas"><i class="fas fa-folder-open"></i> Gestion de cargas</a></li>
             <li><a href="/home" id="logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
         </ul>
     </aside>
@@ -31,10 +32,13 @@
     <div class="profile-container">
         <div class="profile-header">
             <label for="profile-upload">
-                <img id="profile-picture" src="/assets/logo.png" alt="Imagen de perfil">
+                <img id="profile-picture" src="profile-placeholder.png" alt="Imagen de perfil">
             </label>
-            <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
-            <button class="change-photo" onclick="document.getElementById('profile-upload').click()">Cambiar Foto</button>
+            <input type="file" id="profile-upload" accept="image/*" style="display: none;" onchange="previewImagePaciente(event)">
+            <div>
+                <h1>Paciente</h1>
+                <button class="change-photo" onclick="document.getElementById('profile-upload').click()">Cambiar imagen de perfil</button>
+            </div>
         </div>
 
         <div class="profile-sections">

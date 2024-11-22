@@ -9,7 +9,7 @@
 /* Fondo con patrón de íconos repetitivos */
 body {
     background-color: #f0f4f8;
-    background-image: url('../Assets/Imagen de WhatsApp 2024-11-12 a las 19.01.34_59f4acd0.jpg'); /* Ajusta la ruta */
+    background-image: url('../Assets/');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -17,8 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
-    height: 100%;
+    padding: 20px;
 }
 
 /* Menú lateral */
@@ -59,7 +58,7 @@ body {
     height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
-    border: 2px solid #992da39f;
+    border: 2px solid #bc69ff;
 }
 
 .logo-section p {
@@ -99,36 +98,147 @@ body {
     color: #fff;
 }
 
-/* Contenedor para el mensaje de atención y QR */
-.qr-container {
-    background-color: #992da39f; /* Color de fondo morado */
-    border: 2px solid #9656a5; /* Borde de tono más oscuro */
-    border-radius: 10px;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
-    width: 280px;
+}
+
+/* Contenedor principal */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    gap: 40px;
+}
+
+/* Información de la fonoaudióloga */
+.fono-container {
+    text-align: center;
+    width: 50%;
+}
+
+.fono-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #992da3;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fono-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.fono-description {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+/* Información del QR */
+.qr-container {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo aumentado */
+    background-color: #a464c9;
+    border: 3px solid #8d52b5;
+    border-radius: 15px;
+    padding: 30px 25px; /* Más espacio interno */
     text-align: center;
     color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Espacio uniforme entre los elementos */
+}
+
+.qr-container h3 {
+    font-size: 24px; /* Título más grande */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
 }
 
 .attention-hours {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    font-size: 18px; /* Texto más grande */
+    line-height: 1.8;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+    border-left: 5px solid #ffffff;
 }
 
 .qr-code {
-    width: 150px;
-    height: 150px;
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.whatsapp-button {
+    background-color: #25d366;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    width: 100%; /* Botón al ancho del contenedor */
+    max-width: 280px; /* Máximo tamaño */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #1da955;
+    transform: scale(1.05);
 }
 
 .disclaimer {
-    font-size: 14px;
+    font-size: 16px; /* Texto más grande */
+    line-height: 1.6;
+    text-align: justify;
+    color: #ececec;
     margin-top: 15px;
-    line-height: 1.4;
-    text-align: center;
+    padding: 0 10px;
+}
+
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .fono-container, .qr-container {
+        width: 100%;
+    }
 }
