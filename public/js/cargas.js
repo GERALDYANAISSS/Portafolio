@@ -30,14 +30,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${paciente.nivel_ed || "No especificado"}</td>
                     <td>${paciente.rut}</td>
                     <td>${paciente.fech_nac}</td>
+                    <td>
+                        <button class="delete-btn">
+                            <i class="fas fa-trash" style="color: red;"></i>
+                        </button>
+                    </td>
                 `;
                 tableBody.appendChild(row);
+
+                // Agregar evento para eliminar fila
+                const deleteButton = row.querySelector(".delete-btn");
+                deleteButton.addEventListener("click", () => {
+                    row.remove();
+                    // Aquí puedes agregar lógica adicional para eliminar en el backend
+                });
             });
         })
         .catch(error => {
             console.error("Error al obtener los pacientes:", error);
         });
-    
 
     // Manejar el clic del botón para redirigir a /infante
     const addPatientButton = document.getElementById("add-patient-btn");
